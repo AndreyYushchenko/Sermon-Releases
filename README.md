@@ -1,38 +1,105 @@
-# Sermon
+# Sermon — программа для церкви: песни, Библия и презентации на проекторе и в OBS
 
-Программа для церковных служений: песни, Библия, объявления, фото, видео и таймеры на проекторе и в OBS.
+**Sermon** — программа для церковного служения на Windows и macOS. Она выводит на проектор и в трансляцию слова песен, стихи из Библии, объявления, фото, видео и таймеры. Всё управляется из одного окна: оператор видит, что сейчас на экране и что будет дальше, и переключает слайды одной клавишей.
 
-## ⬇️ Скачать
+Подходит для воскресного служения, молодёжных встреч, конференций, лагерей и онлайн-трансляций. Интерфейс на украинском, русском, английском и ещё шести языках.
 
-**[Последняя версия →](https://github.com/AndreyYushchenko/Sermon-Releases/releases/latest)**
+## ⬇️ Скачать Sermon бесплатно
 
-Откройте ссылку, в разделе **Assets** скачайте файл `Sermon-Setup-….exe` и запустите его.
+### **[Скачать последнюю версию →](https://github.com/AndreyYushchenko/Sermon-Releases/releases/latest)**
 
-Нужна Windows 10 или 11 (64-бит).
+На странице версии, в разделе **Assets**, выберите файл для своей системы:
 
-> Если Windows покажет «Windows защитила ваш компьютер», нажмите **Подробнее → Выполнить в любом случае**. Установщик пока не подписан цифровой подписью.
+| Система | Файл | Как установить |
+|---|---|---|
+| **Windows 10 / 11** (64-бит) | `Sermon-Setup-….exe` | Запустите файл. Если Windows покажет «Windows защитила ваш компьютер», нажмите **Подробнее → Выполнить в любом случае** — установщик пока не подписан цифровой подписью. |
+| **macOS** (Apple Silicon и Intel), экспериментальная | `Sermon-….dmg` | Откройте файл и перетащите Sermon в папку **Программы**. При первом запуске откройте **Системные настройки → Конфиденциальность и безопасность** и нажмите **Всё равно открыть**. |
 
-## Возможности
+## Что умеет Sermon
 
-- Песни и сборники (.sps / .spb, ChordPro, .txt), аккорды, припевы
-- Библия: выбор по ссылке, поиск по тексту, несколько переводов
-- Объявления, фото и видео, в том числе видео фоном
-- Плейлисты для служения
-- Таймеры: часы, обратный отсчёт, секундомер, сообщения, запуск по расписанию
-- Вывод на второй монитор (проектор) и в OBS: Browser Source и переключение сцен через obs-websocket
-- Резервные копии, вручную и автоматически
-- Языки интерфейса: українська, русский, English, Deutsch, Polski, Română, Español, 한국어, Português
+**Песни и прославление**
+- Слова песен на проекторе: куплеты, припевы и бридж разбиваются на слайды автоматически
+- Сборники песен: импорт из файлов .sps и .spb, ChordPro (.cho) и обычного текста (.txt)
+- Аккорды над словами, номера куплетов, автоматический повтор припева
+- Поиск песни по названию, словам или номеру в сборнике
+
+**Библия**
+- Вывод стихов Библии на экран: выбор книги, главы и стихов или поиск по тексту
+- Несколько переводов, в том числе второй перевод под стихом
+- Ссылка на место (например, «Иоанна 3:16») и номера стихов на слайде
+
+**Объявления, фото и видео**
+- Объявления с фоном и текстом, фотографии, видео со звуком и видео-фоны в цикле
+- Встроенные фоны для слайдов, свои картинки и видео
+
+**Плейлисты служения**
+- Порядок служения заранее: песни, места из Библии, объявления и видео в одном списке
+- Показ по порядку клавишами или кликером для презентаций (PageDown / PageUp)
+
+**Таймеры и часы**
+- Часы, обратный отсчёт до начала служения, секундомер, сообщения на экране
+- Запуск по расписанию — например, отсчёт каждое воскресенье
+
+**Проектор, трансляция и OBS**
+- Отдельное окно на втором мониторе или проекторе
+- Вывод слайдов в OBS Studio через Browser Source — для YouTube- и Facebook-трансляций
+- Автоматическое переключение сцен OBS через obs-websocket
+
+**Надёжность**
+- Резервные копии библиотеки вручную и автоматически (на флешку, Google Drive или OneDrive)
+- Светлая и тёмная тема, горячие клавиши
+
+## Частые вопросы
+
+**Как вывести слова песен на проектор в церкви?**
+Подключите проектор как второй монитор, добавьте песню в Sermon и нажмите «На экран». Слайды переключаются стрелками или кликером.
+
+**Как показать стих из Библии на экране?**
+В разделе «Библия» выберите книгу, главу и стихи или найдите слово поиском, затем нажмите «На экран».
+
+**Как добавить слова песен в трансляцию OBS?**
+В Sermon откройте «Настройки → OBS и сеть», скопируйте адрес и добавьте его в OBS как источник «Браузер» (Browser Source). Слайды в трансляции будут меняться вместе с проектором.
+
+**Sermon платный?**
+Нет, Sermon можно скачать и пользоваться бесплатно.
+
+**Чем Sermon отличается от ProPresenter, EasyWorship, Holyrics или OpenLP?**
+Sermon — простая бесплатная программа, которая сразу работает с украинскими и русскими сборниками песен (.sps / .spb) и Библией, умеет выводить слайды в OBS и работает на Windows и macOS.
 
 ## Ошибки и предложения
 
-Пишите в **[Issues](https://github.com/AndreyYushchenko/Sermon-Releases/issues)**.
+Это бета-версия. Если что-то не работает или не хватает какой-то функции, напишите в **[Issues](https://github.com/AndreyYushchenko/Sermon-Releases/issues)**.
 
 ---
 
-### Українською
+## Українською — програма для церкви: пісні, Біблія та презентації на проєкторі
 
-Програма для церковних служінь: пісні, Біблія, оголошення, фото, відео й таймери на проєкторі та в OBS. **[Завантажити останню версію →](https://github.com/AndreyYushchenko/Sermon-Releases/releases/latest)** (у розділі *Assets* файл `Sermon-Setup-….exe`). Якщо Windows попередить про захист комп'ютера, натисніть **Докладніше → Виконати в будь-якому разі**.
+**Sermon** — програма для церковного служіння на Windows і macOS. Вона виводить на проєктор і в трансляцію слова пісень, вірші з Біблії, оголошення, фото, відео та таймери. Підходить для недільного служіння, молодіжних зустрічей, конференцій і онлайн-трансляцій через OBS.
 
-### English
+**[⬇️ Завантажити Sermon безкоштовно →](https://github.com/AndreyYushchenko/Sermon-Releases/releases/latest)** — у розділі *Assets*: `Sermon-Setup-….exe` для Windows, `Sermon-….dmg` для macOS.
 
-A presentation app for church services: songs, Bible, announcements, photos, videos and timers on a projector and in OBS. **[Download the latest version →](https://github.com/AndreyYushchenko/Sermon-Releases/releases/latest)** (file `Sermon-Setup-….exe` under *Assets*). Windows 10/11, 64-bit. If SmartScreen warns, click **More info → Run anyway** — the installer is not code-signed yet.
+- Слова пісень на проєкторі, збірники пісень (.sps, .spb, ChordPro, .txt), акорди, приспіви
+- Біблія на екрані: вибір книги, розділу й віршів, пошук за текстом, кілька перекладів
+- Оголошення, фото, відео й відеофони
+- Плейлисти служіння, керування клавішами або презентером
+- Таймери: годинник, зворотний відлік до початку служіння, секундомір, повідомлення
+- Вивід у OBS Studio (Browser Source) і перемикання сцен через obs-websocket
+- Резервні копії, світла й темна тема, інтерфейс українською
+
+Якщо Windows попередить про захист комп'ютера, натисніть **Докладніше → Виконати в будь-якому разі**. На Mac під час першого запуску відкрийте **Системні параметри → Конфіденційність і безпека → Усе одно відкрити**.
+
+## English — church presentation software for worship lyrics, Bible and OBS
+
+**Sermon** is free church presentation software for Windows and macOS. It puts worship song lyrics, Bible verses, announcements, photos, videos and countdown timers on a projector and into your livestream.
+
+**[⬇️ Download Sermon for free →](https://github.com/AndreyYushchenko/Sermon-Releases/releases/latest)** — under *Assets*: `Sermon-Setup-….exe` for Windows 10/11, `Sermon-….dmg` for macOS (experimental).
+
+- Song lyrics on the projector, songbooks (.sps, .spb, ChordPro, .txt), chords, choruses
+- Bible verses on screen: pick book, chapter and verses or search the text; multiple translations
+- Announcements, photos, videos and looping video backgrounds
+- Service playlists, controlled by keyboard or presentation clicker
+- Timers: clock, countdown to service start, stopwatch, messages, scheduled start
+- OBS Studio output (Browser Source) and scene switching via obs-websocket
+- Backups, light and dark theme; interface in English, Ukrainian, Russian, German, Polish, Romanian, Spanish, Korean and Portuguese
+
+On Windows, if SmartScreen warns, click **More info → Run anyway** — the installer is not code-signed yet. On a Mac, open the app once via **System Settings → Privacy & Security → Open Anyway**.
