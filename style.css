@@ -87,7 +87,7 @@ button { font: inherit; color: inherit; }
   border-bottom-color: var(--line); height: 70px;
 }
 .logo { display: inline-flex; align-items: center; gap: 12px; font-size: 29px; font-weight: 700; letter-spacing: -0.3px; }
-.logo-icon { width: 36px; height: 36px; color: var(--blue); }
+.logo-icon { width: 36px; height: 36px; border-radius: 8px; flex: none; }
 .nav-links { display: flex; gap: 10px; margin: 0 auto; }
 .nav-links a {
   padding: 9px 18px; border-radius: 10px; font-size: 15px; font-weight: 500; color: var(--text-2);
