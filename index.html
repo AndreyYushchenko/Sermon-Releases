@@ -64,6 +64,10 @@
     <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></symbol>
     <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
     <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol>
   </defs>
 </svg>
 
@@ -75,7 +79,7 @@
     <a href="#features" class="active">Features</a>
     <a href="#screenshots">Screenshots</a>
     <a href="#platforms">Platforms</a>
-    <a href="mailto:sermon.support@gmail.com?subject=Sermon">Support</a>
+    <a data-support href="mailto:sermon.support@gmail.com?subject=Sermon">Support</a>
     <a href="#platforms" data-nav="download">Download</a>
   </nav>
   <div class="lang">
@@ -234,14 +238,50 @@
     <a href="#features">Features</a>
     <a href="#screenshots">Screenshots</a>
     <a href="#platforms">Platforms</a>
-    <a href="mailto:sermon.support@gmail.com?subject=Sermon">Support</a>
+    <a data-support href="mailto:sermon.support@gmail.com?subject=Sermon">Support</a>
     <a href="#platforms">Download</a>
   </nav>
   <div class="social">
-    <a href="mailto:sermon.support@gmail.com?subject=Sermon" aria-label="Email"><svg class="ic"><use href="#i-mail"/></svg></a>
+    <a data-support href="mailto:sermon.support@gmail.com?subject=Sermon" aria-label="Email"><svg class="ic"><use href="#i-mail"/></svg></a>
     <a href="https://github.com/AndreyYushchenko/Sermon-Releases/releases" aria-label="All releases"><svg class="ic"><use href="#i-globe"/></svg></a>
   </div>
 </footer>
+
+<dialog class="modal" tabindex="-1" id="support-dialog" aria-labelledby="support-title">
+  <button class="modal-close" data-close aria-label="Close"><svg class="ic"><use href="#i-x"/></svg></button>
+  <div class="modal-icon"><svg class="ic"><use href="#i-mail"/></svg></div>
+  <h2 id="support-title">Contact support</h2>
+  <p>Questions, ideas or something not working in Sermon? Write to us — we reply to every message.</p>
+  <div class="email-row">
+    <span class="email" aria-live="polite">sermon.support@gmail.com</span>
+    <button class="btn btn-outline btn-copy" data-copied="Copied" aria-label="Copy address" title="Copy address"><svg class="ic ic-16"><use href="#i-copy"/></svg></button>
+  </div>
+  <div class="modal-actions">
+    <a class="btn btn-blue" target="_blank" rel="noopener" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=sermon.support@gmail.com&amp;su=Sermon">Write in Gmail <svg class="ic ic-16"><use href="#i-external"/></svg></a>
+    <a class="btn btn-outline" href="mailto:sermon.support@gmail.com?subject=Sermon">Open mail app</a>
+  </div>
+</dialog>
+
+<dialog class="modal" tabindex="-1" id="download-dialog" aria-labelledby="download-title">
+  <button class="modal-close" data-close aria-label="Close"><svg class="ic"><use href="#i-x"/></svg></button>
+  <div class="modal-icon modal-icon-download"><svg class="ic"><use href="#i-download"/></svg></div>
+  <h2 id="download-title">Your download has started</h2>
+  <p>The installer is being saved to your browser's downloads. Open it once it finishes.</p>
+  <p class="modal-hint" data-os="windows">Windows may say the app is unrecognized: click “More info”, then “Run anyway”.</p>
+  <p class="modal-hint" data-os="mac">If macOS won't open it, right-click Sermon in Applications and choose “Open”.</p>
+  <div class="modal-actions">
+    <a class="btn btn-outline dl-again" href="https://github.com/AndreyYushchenko/Sermon-Releases/releases">Didn't start? Download again</a>
+    <a class="modal-link" target="_blank" rel="noopener" href="https://github.com/AndreyYushchenko/Sermon-Releases/releases">All releases <svg class="ic ic-14"><use href="#i-external"/></svg></a>
+  </div>
+</dialog>
+
+<dialog class="modal" tabindex="-1" id="mobile-dialog" aria-labelledby="mobile-title">
+  <button class="modal-close" data-close aria-label="Close"><svg class="ic"><use href="#i-x"/></svg></button>
+  <div class="modal-icon"><svg class="ic"><use href="#i-monitor"/></svg></div>
+  <h2 id="mobile-title">Open this page on a computer</h2>
+  <p>Sermon runs on Windows and macOS. Open this page on your computer to download it. The iOS app is coming soon.</p>
+  <div class="modal-actions"><button class="btn btn-blue" data-close>Close</button></div>
+</dialog>
 
 <script src="app.js"></script>
 </body>

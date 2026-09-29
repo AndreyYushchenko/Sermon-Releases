@@ -144,6 +144,79 @@
     }
   }
 
+  // Dialogs.
+  const showDialog = (dialog) => {
+    if (dialog.open) return;
+    dialog.showModal();
+    dialog.focus(); // not the close button, which would show a focus ring
+  };
+  document.querySelectorAll('.modal').forEach((dialog) => {
+    dialog.addEventListener('click', (e) => {
+      // A click on the backdrop lands on the dialog itself.
+      if (e.target === dialog || e.target.closest('[data-close]')) dialog.close();
+    });
+  });
+
+  // Support: mailto does nothing without a mail app, so show the address with ways to write.
+  const support = document.getElementById('support-dialog');
+  document.querySelectorAll('[data-support]').forEach((a) => a.addEventListener('click', (e) => {
+    e.preventDefault();
+    showDialog(support);
+  }));
+  const copy = support.querySelector('.btn-copy');
+  const email = support.querySelector('.email');
+  const address = email.textContent;
+  copy.addEventListener('click', () => {
+    const done = () => {
+      copy.classList.add('done');
+      email.classList.add('done');
+      email.textContent = copy.dataset.copied;
+      copy.querySelector('use').setAttribute('href', '#i-check');
+      setTimeout(() => {
+        copy.classList.remove('done');
+        email.classList.remove('done');
+        email.textContent = address;
+        copy.querySelector('use').setAttribute('href', '#i-copy');
+      }, 1800);
+    };
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(address).then(done, () => {});
+    } else {
+      const range = document.createRange();
+      range.selectNodeContents(email);
+      getSelection().removeAllRanges();
+      getSelection().addRange(range);
+      try { document.execCommand('copy'); done(); } catch (err) { /* the address stays selected */ }
+    }
+  });
+
+  // Download buttons: the file saves quietly, so say it started (and how to get past the OS warning).
+  const downloadDialog = document.getElementById('download-dialog');
+  const mobileDialog = document.getElementById('mobile-dialog');
+  const phone = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ||
+    (/Macintosh/.test(navigator.userAgent) && navigator.maxTouchPoints > 1);
+  document.querySelectorAll('[data-download]').forEach((a) => a.addEventListener('click', (e) => {
+    if (phone) {
+      e.preventDefault();
+      showDialog(mobileDialog);
+      return;
+    }
+    // Until the release list loads the link opens the releases page, which needs no dialog.
+    if (!a.href.includes('/releases/download/')) return;
+    downloadDialog.dataset.os = a.dataset.download;
+    downloadDialog.querySelector('.dl-again').href = a.href;
+    setTimeout(() => showDialog(downloadDialog), 150);
+  }));
+
+  // "Download" in the menu: flash the download cards once the page has scrolled to them.
+  const cards = document.querySelector('.platform-cards');
+  document.querySelectorAll('a[data-nav="download"], .footer-links a[href="#platforms"]:last-child').forEach((a) =>
+    a.addEventListener('click', () => {
+      cards.classList.remove('flash');
+      setTimeout(() => cards.classList.add('flash'), 700);
+      setTimeout(() => cards.classList.remove('flash'), 3500);
+    }));
+
   // Download links: the newest release's installer / disk image.
   fetch('https://api.github.com/repos/AndreyYushchenko/Sermon-Releases/releases?per_page=10')
     .then((r) => (r.ok ? r.json() : []))
