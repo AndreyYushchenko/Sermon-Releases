@@ -23,6 +23,7 @@
 <meta name="twitter:image" content="https://andreyyushchenko.github.io/Sermon-Releases/assets/og.jpg">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Sermon", "url": "https://andreyyushchenko.github.io/Sermon-Releases/ko/", "description": "Sermon은 교회를 위한 무료 프레젠테이션 프로그램입니다. 찬양 가사, 성경 구절, 광고, 사진, 동영상, 재생 목록과 타이머를 화면과 방송(OBS)에 띄웁니다. Windows와 macOS. 오프라인에서도 작동합니다.", "inLanguage": "ko", "applicationCategory": "MultimediaApplication", "operatingSystem": "Windows 10, Windows 11, macOS 11+", "image": "https://andreyyushchenko.github.io/Sermon-Releases/assets/og.jpg", "downloadUrl": "https://github.com/AndreyYushchenko/Sermon-Releases/releases", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
 <meta name="theme-color" content="#070b14">
+<script>(function(){var t;try{t=localStorage.getItem('sermon-theme')}catch(e){}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';document.documentElement.dataset.theme=t;if(t==='light')document.querySelector('meta[name=theme-color]').content='#f7f4ee'})();</script>
 <link rel="alternate" hreflang="en" href="https://andreyyushchenko.github.io/Sermon-Releases/">
 <link rel="alternate" hreflang="uk" href="https://andreyyushchenko.github.io/Sermon-Releases/uk/">
 <link rel="alternate" hreflang="ru" href="https://andreyyushchenko.github.io/Sermon-Releases/ru/">
@@ -60,6 +61,8 @@
     <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
     <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
     <symbol id="i-smartphone" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
     <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></symbol>
   </defs>
 </svg>
@@ -91,6 +94,9 @@
       <a role="menuitem" href="../pt/" data-lang="pt" lang="pt">Português</a>
     </div>
   </div>
+  <button class="theme-toggle" aria-label="밝은 / 어두운 테마" title="밝은 / 어두운 테마">
+    <svg class="ic ic-moon"><use href="#i-moon"/></svg><svg class="ic ic-sun"><use href="#i-sun"/></svg>
+  </button>
   <a class="btn btn-gold nav-download" data-download="windows" href="https://github.com/AndreyYushchenko/Sermon-Releases/releases">
     <span class="win-logo" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
     Windows용 다운로드
@@ -102,6 +108,7 @@
 <main>
   <section class="hero">
     <div class="hero-bg" aria-hidden="true"></div>
+    <div class="sparks" aria-hidden="true"></div>
     <div class="hero-inner">
       <div class="hero-text">
         <p class="eyebrow">교회를 위한 프레젠테이션 프로그램</p>
