@@ -5,7 +5,10 @@
   const LANGS = ['en', 'uk', 'ru', 'de', 'pl', 'ro', 'es', 'ko', 'pt'];
   const lang = document.body.dataset.lang;
   const base = document.body.dataset.base;
-  const pageFor = (l) => base + (l === 'en' ? '' : l + '/');
+  // A sub-page (the OBS guide) exists in fewer languages and lives in <lang>/<page>/.
+  const page = document.body.dataset.page;
+  const pageLangs = (document.body.dataset.langs || LANGS.join(' ')).split(' ');
+  const pageFor = (l) => base + (l === 'en' ? '' : l + '/') + (page ? page + '/' : '');
   const store = {
     get: () => { try { return localStorage.getItem('sermon-lang'); } catch (e) { return null; } },
     set: (v) => { try { localStorage.setItem('sermon-lang', v); } catch (e) { /* private mode */ } },
@@ -13,7 +16,7 @@
   // First visit to the English page: the visitor's own language, if we have it.
   if (lang === 'en' && !store.get()) {
     const wanted = (navigator.languages || [navigator.language || 'en'])
-      .map((l) => l.toLowerCase().split('-')[0]).find((l) => LANGS.includes(l));
+      .map((l) => l.toLowerCase().split('-')[0]).find((l) => pageLangs.includes(l));
     if (wanted && wanted !== 'en') {
       store.set(wanted);
       location.replace(pageFor(wanted) + location.hash);
@@ -59,26 +62,28 @@
   window.addEventListener('scroll', spy, { passive: true });
   spy();
 
-  // Screenshot carousel.
+  // Screenshot carousel (main page only).
   const track = document.querySelector('.track');
-  const pages = track.children.length;
-  const dots = [...document.querySelectorAll('.dot')];
-  let page = 0;
-  const show = (n) => {
-    page = (n + pages) % pages;
-    track.style.transform = `translateX(-${page * 100}%)`;
-    dots.forEach((d, i) => d.classList.toggle('active', i === page));
-  };
-  document.querySelectorAll('.arrow').forEach((b) => b.addEventListener('click', () => show(page + Number(b.dataset.dir))));
-  dots.forEach((d, i) => d.addEventListener('click', () => show(i)));
-  let touchX = null;
-  track.addEventListener('touchstart', (e) => { touchX = e.touches[0].clientX; }, { passive: true });
-  track.addEventListener('touchend', (e) => {
-    if (touchX === null) return;
-    const dx = e.changedTouches[0].clientX - touchX;
-    if (Math.abs(dx) > 50) show(page + (dx < 0 ? 1 : -1));
-    touchX = null;
-  });
+  if (track) {
+    const pages = track.children.length;
+    const dots = [...document.querySelectorAll('.dot')];
+    let current = 0;
+    const show = (n) => {
+      current = (n + pages) % pages;
+      track.style.transform = `translateX(-${current * 100}%)`;
+      dots.forEach((d, i) => d.classList.toggle('active', i === current));
+    };
+    document.querySelectorAll('.arrow').forEach((b) => b.addEventListener('click', () => show(current + Number(b.dataset.dir))));
+    dots.forEach((d, i) => d.addEventListener('click', () => show(i)));
+    let touchX = null;
+    track.addEventListener('touchstart', (e) => { touchX = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend', (e) => {
+      if (touchX === null) return;
+      const dx = e.changedTouches[0].clientX - touchX;
+      if (Math.abs(dx) > 50) show(current + (dx < 0 ? 1 : -1));
+      touchX = null;
+    });
+  }
 
   const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -118,7 +123,7 @@
   // Sections slide in as they scroll into view.
   if (!calm && 'IntersectionObserver' in window) {
     const groups = [['.feature', 0.06], ['.showcase-head', 0], ['.page', 0.1, '.shot'], ['.platforms-text', 0],
-      ['.platform', 0.12], ['.cta-inner > *', 0.1]];
+      ['.platform', 0.12], ['.cta-inner > *', 0.1], ['.g-step', 0], ['.g-before', 0], ['.g-faq', 0.04]];
     const items = [];
     for (const [selector, step, inner] of groups) {
       if (inner) {
@@ -210,12 +215,39 @@
 
   // "Download" in the menu: flash the download cards once the page has scrolled to them.
   const cards = document.querySelector('.platform-cards');
-  document.querySelectorAll('a[data-nav="download"], .footer-links a[href="#platforms"]:last-child').forEach((a) =>
-    a.addEventListener('click', () => {
-      cards.classList.remove('flash');
-      setTimeout(() => cards.classList.add('flash'), 700);
-      setTimeout(() => cards.classList.remove('flash'), 3500);
+  if (cards) {
+    document.querySelectorAll('a[data-nav="download"], .footer-links a[href="#platforms"]:last-child').forEach((a) =>
+      a.addEventListener('click', () => {
+        cards.classList.remove('flash');
+        setTimeout(() => cards.classList.add('flash'), 700);
+        setTimeout(() => cards.classList.remove('flash'), 3500);
+      }));
+  }
+
+  // OBS guide: screenshots open large, and the contents follow the reading position.
+  const lightbox = document.querySelector('.g-lightbox');
+  if (lightbox) {
+    const body = lightbox.querySelector('.g-lightbox-body');
+    document.querySelectorAll('.g-zoom').forEach((b) => b.addEventListener('click', () => {
+      body.replaceChildren(b.querySelector('.g-frame').cloneNode(true));
+      body.querySelector('img').loading = 'eager';
+      showDialog(lightbox);
     }));
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox || e.target === body || e.target.closest('[data-close]')) lightbox.close();
+    });
+  }
+  const tocLinks = [...document.querySelectorAll('.g-toc a')];
+  if (tocLinks.length) {
+    const targets = tocLinks.map((a) => document.querySelector(a.getAttribute('href')));
+    const follow = () => {
+      let at = 0;
+      targets.forEach((t, i) => { if (t && t.getBoundingClientRect().top < window.innerHeight * 0.35) at = i; });
+      tocLinks.forEach((a, i) => a.classList.toggle('active', i === at));
+    };
+    window.addEventListener('scroll', follow, { passive: true });
+    follow();
+  }
 
   // Download links: the newest release's installer / disk image.
   fetch('https://api.github.com/repos/AndreyYushchenko/Sermon-Releases/releases?per_page=10')

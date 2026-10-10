@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Как вывести слайды Sermon в OBS — пошаговая инструкция</title>
+<meta name="description" content="Добавьте Sermon в OBS Studio как источник «Браузер» за 5 минут: скопируйте адрес, вставьте в OBS — готово. Скриншоты каждого шага, переключение сцен и решение проблем.">
+<meta property="og:title" content="Как вывести слайды Sermon в OBS — пошаговая инструкция">
+<meta property="og:description" content="Добавьте Sermon в OBS Studio как источник «Браузер» за 5 минут: скопируйте адрес, вставьте в OBS — готово. Скриншоты каждого шага, переключение сцен и решение проблем.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:site_name" content="Sermon">
+<meta property="og:url" content="https://andreyyushchenko.github.io/Sermon-Releases/ru/obs/">
+<meta property="og:image" content="https://andreyyushchenko.github.io/Sermon-Releases/assets/ru/obs-4-result.jpg?v=066e439eb5">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Как вывести слайды Sermon в OBS — пошаговая инструкция">
+<meta name="twitter:description" content="Добавьте Sermon в OBS Studio как источник «Браузер» за 5 минут: скопируйте адрес, вставьте в OBS — готово. Скриншоты каждого шага, переключение сцен и решение проблем.">
+<meta name="twitter:image" content="https://andreyyushchenko.github.io/Sermon-Releases/assets/ru/obs-4-result.jpg?v=066e439eb5">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "Слайды Sermon в OBS", "description": "Добавьте Sermon в OBS Studio как источник «Браузер» за 5 минут: скопируйте адрес, вставьте в OBS — готово. Скриншоты каждого шага, переключение сцен и решение проблем.", "inLanguage": "ru", "totalTime": "PT5M", "tool": [{"@type": "HowToTool", "name": "Sermon"}, {"@type": "HowToTool", "name": "OBS Studio"}], "step": [{"@type": "HowToStep", "name": "Скопируйте адрес в Sermon", "url": "https://andreyyushchenko.github.io/Sermon-Releases/ru/obs/#copy", "text": "В правой панели рядом с OBS нажмите Адрес 1 . Ссылка скопируется в буфер обмена. Она выглядит так: http://ИМЯ-КОМПЬЮТЕРА:8090/display . Та же ссылка есть в Настройки → OBS и сеть → Веб-адрес для источника Browser . В ней имя компьютера, поэтому она не меняется, когда роутер выдаёт компьютеру новый IP-адрес.", "image": "https://andreyyushchenko.github.io/Sermon-Releases/assets/ru/obs-sermon-panel.jpg?v=bee22a8f40"}, {"@type": "HowToStep", "name": "Добавьте источник в OBS", "url": "https://andreyyushchenko.github.io/Sermon-Releases/ru/obs/#add", "text": "Откройте OBS Studio и выберите сцену, в которой должны быть слайды, — например, сцену с камерой. Под Источники нажмите + 1 .", "image": "https://andreyyushchenko.github.io/Sermon-Releases/assets/ru/obs-1-sources.jpg?v=20dfc5c330"}, {"@type": "HowToStep", "name": "Выберите «Браузер»", "url": "https://andreyyushchenko.github.io/Sermon-Releases/ru/obs/#browser", "text": "В окне Добавить источник выберите Браузер 1 и нажмите Создать новый источник 2 .", "image": "https://andreyyushchenko.github.io/Sermon-Releases/assets/ru/obs-2-add.jpg?v=bc1f41676b"}, {"@type": "HowToStep", "name": "Вставьте адрес и задайте размер", "url": "https://andreyyushchenko.github.io/Sermon-Releases/ru/obs/#paste", "text": "Ссылка 1 : очистите поле и вставьте адрес (Ctrl+V). Ширина 2 : 1920 , Высота 3 : 1080 . Остальное оставьте как есть и нажмите OK 4 .", "image": "https://andreyyushchenko.github.io/Sermon-Releases/assets/ru/obs-3-props.jpg?v=df978429bb"}, {"@type": "HowToStep", "name": "Проверьте результат", "url": "https://andreyyushchenko.github.io/Sermon-Releases/ru/obs/#done", "text": "Теперь текущий слайд появляется в OBS и меняется вместе с проектором. OBS запоминает источник — делать это нужно только один раз. Если слайд не заполняет кадр, щёлкните источник правой кнопкой и выберите Преобразовать → Подогнать по размеру экрана (Ctrl+F).", "image": "https://andreyyushchenko.github.io/Sermon-Releases/assets/ru/obs-4-result.jpg?v=066e439eb5"}]}</script>
+<meta name="theme-color" content="#070b14">
+<script>(function(){var t;try{t=localStorage.getItem('sermon-theme')}catch(e){}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';document.documentElement.dataset.theme=t;if(t==='light')document.querySelector('meta[name=theme-color]').content='#f7f4ee'})();</script>
+<link rel="alternate" hreflang="en" href="https://andreyyushchenko.github.io/Sermon-Releases/obs/">
+<link rel="alternate" hreflang="uk" href="https://andreyyushchenko.github.io/Sermon-Releases/uk/obs/">
+<link rel="alternate" hreflang="ru" href="https://andreyyushchenko.github.io/Sermon-Releases/ru/obs/">
+<link rel="alternate" hreflang="x-default" href="https://andreyyushchenko.github.io/Sermon-Releases/obs/">
+<link rel="canonical" href="https://andreyyushchenko.github.io/Sermon-Releases/ru/obs/">
+<link rel="icon" type="image/png" href="../../assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css?v=3aa838b68b">
+</head>
+<body class="guide-page" data-lang="ru" data-base="../../" data-page="obs" data-langs="en uk ru">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-book-open" viewBox="0 0 24 24"><path d="M12 5v16"/><path d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z"/></symbol>
+    <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></symbol>
+    <symbol id="i-megaphone" viewBox="0 0 24 24"><path d="M11 6a13 13 0 0 0 8.4-2.8A1 1 0 0 1 21 4v12a1 1 0 0 1-1.6.8A13 13 0 0 0 11 14H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z"/><path d="M6 14a12 12 0 0 0 2.4 7.2 2 2 0 0 0 3.2-2.4A8 8 0 0 1 10 14"/><path d="M8 6v8"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></symbol>
+    <symbol id="i-circle-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M10 8l6 4-6 4z"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><path d="M3 12h.01"/><path d="M3 18h.01"/><path d="M3 6h.01"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M8 6h13"/></symbol>
+    <symbol id="i-timer" viewBox="0 0 24 24"><line x1="10" x2="14" y1="2" y2="2"/><line x1="12" x2="15" y1="14" y2="11"/><circle cx="12" cy="14" r="8"/></symbol>
+    <symbol id="i-monitor" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+    <symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+    <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+    <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
+    <symbol id="i-smartphone" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol>
+  </defs>
+</svg>
+
+<header class="nav" id="top">
+  <a class="logo" href="../../ru/" aria-label="Sermon">
+    <img class="logo-icon" src="../../assets/favicon.png" alt="" width="36" height="36"><span>Sermon</span>
+  </a>
+  <nav class="nav-links" aria-label="Main">
+    <a href="../../ru/#features">Возможности</a>
+    <a href="../../ru/#screenshots">Скриншоты</a>
+    <a href="#top" class="active" aria-current="page">OBS</a>
+    <a data-support href="mailto:sermon.support@gmail.com?subject=Sermon">Поддержка</a>
+    <a href="../../ru/#platforms">Скачать</a>
+  </nav>
+  <div class="lang">
+    <button class="lang-button" aria-haspopup="true" aria-expanded="false" aria-label="Язык">
+      <svg class="ic ic-16"><use href="#i-globe"/></svg><span>RU</span><svg class="ic ic-14"><use href="#i-chevron-down"/></svg>
+    </button>
+    <div class="lang-menu" role="menu">
+      <a role="menuitem" href="../../obs/" data-lang="en" lang="en">English</a>
+      <a role="menuitem" href="../../uk/obs/" data-lang="uk" lang="uk">Українська</a>
+      <a role="menuitem" href="../../ru/obs/" data-lang="ru" lang="ru" aria-current="true">Русский</a>
+    </div>
+  </div>
+  <button class="theme-toggle" aria-label="Светлая / тёмная тема" title="Светлая / тёмная тема">
+    <svg class="ic ic-moon"><use href="#i-moon"/></svg><svg class="ic ic-sun"><use href="#i-sun"/></svg>
+  </button>
+  <a class="btn btn-gold nav-download" data-download="windows" href="https://github.com/AndreyYushchenko/Sermon-Releases/releases">
+    <span class="win-logo" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+    Скачать для Windows
+    <svg class="ic"><use href="#i-arrow-right"/></svg>
+  </a>
+  <button class="nav-toggle" aria-label="Меню" aria-expanded="false"><svg class="ic"><use href="#i-menu"/></svg></button>
+</header>
+
+<main class="guide">
+  <section class="g-hero">
+    <div class="g-hero-bg" aria-hidden="true"></div>
+    <div class="g-hero-inner">
+      <p class="eyebrow">Инструкция · OBS Studio</p>
+      <h1>Слайды Sermon <span class="gold">в OBS</span></h1>
+      <p class="lead">Песни, стихи из Библии и объявления с проектора — сразу в трансляции. Sermon отдаёт OBS веб-страницу с текущим слайдом: добавьте её один раз как источник <b>Браузер</b>, и дальше она сама повторяет проектор.</p>
+      <ul class="g-facts">
+        <li><svg class="ic ic-16"><use href="#i-check"/></svg>Около 5 минут</li>
+        <li><svg class="ic ic-16"><use href="#i-check"/></svg>OBS Studio 28 или новее</li>
+        <li><svg class="ic ic-16"><use href="#i-check"/></svg>Этот компьютер или другой в вашей сети</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="g-layout">
+    <aside class="g-toc" aria-label="На этой странице">
+      <p class="g-toc-title">На этой странице</p>
+      <nav>
+        <a href="#before">Перед началом</a>
+        <a href="#copy"><span>1</span>Скопируйте адрес в Sermon</a>
+        <a href="#add"><span>2</span>Добавьте источник в OBS</a>
+        <a href="#browser"><span>3</span>Выберите «Браузер»</a>
+        <a href="#paste"><span>4</span>Вставьте адрес и задайте размер</a>
+        <a href="#done"><span>5</span>Проверьте результат</a>
+        <a href="#extra">Дополнительно</a>
+        <a href="#faq">Если что-то не работает</a>
+      </nav>
+    </aside>
+    <article class="g-body">
+<section class="g-before" id="before"><h2>Перед началом</h2><ul><li>Sermon <b>0.2.4</b> или новее. В старых версиях в ссылке был IP-адрес компьютера, и он мог меняться каждую неделю.</li><li>Установленный <a href="https://obsproject.com/" target="_blank" rel="noopener">OBS Studio</a> — на этом компьютере или на другом в той же сети.</li><li>Sermon открыт во время служения: OBS берёт слайды из него.</li></ul></section>
+<section class="g-part" id="steps"><h2>Подключение за 5 шагов</h2>
+<section class="g-step" id="copy"><div class="g-num" aria-hidden="true">1</div><div class="g-content"><p class="g-kicker">Шаг 1</p><h3>Скопируйте адрес в Sermon</h3><p>В правой панели рядом с <b>OBS</b> нажмите <b>Адрес</b>&nbsp;<span class="g-nb"><i>1</i>.</span> Ссылка скопируется в буфер обмена. Она выглядит так: <code>http://ИМЯ-КОМПЬЮТЕРА:8090/display</code>.</p><p>Та же ссылка есть в <b>Настройки → OBS и сеть → Веб-адрес для источника Browser</b>. В ней имя компьютера, поэтому она не меняется, когда роутер выдаёт компьютеру новый IP-адрес.</p><figure class="g-shot narrow"><button class="g-zoom" type="button" title="Нажмите на картинку, чтобы увеличить" aria-label="Нажмите на картинку, чтобы увеличить"><span class="g-frame"><img src="../../assets/ru/obs-sermon-panel.jpg?v=bee22a8f40" loading="lazy" width="504" height="470" alt="Скриншот: Скопируйте адрес в Sermon"><span class="mk mk-l" style="left:76.98%;top:89.57%;width:19.25%;height:7.66%"><b>1</b></span></span></button></figure></div></section>
+<section class="g-step" id="add"><div class="g-num" aria-hidden="true">2</div><div class="g-content"><p class="g-kicker">Шаг 2</p><h3>Добавьте источник в OBS</h3><p>Откройте OBS Studio и выберите сцену, в которой должны быть слайды, — например, сцену с камерой. Под <b>Источники</b> нажмите <b>+</b>&nbsp;<span class="g-nb"><i>1</i>.</span></p><figure class="g-shot"><button class="g-zoom" type="button" title="Нажмите на картинку, чтобы увеличить" aria-label="Нажмите на картинку, чтобы увеличить"><span class="g-frame"><img src="../../assets/ru/obs-1-sources.jpg?v=20dfc5c330" loading="lazy" width="1486" height="915" alt="Скриншот: Добавьте источник в OBS"><span class="mk" style="left:0.34%;top:90.93%;width:2.15%;height:3.6%"><b>1</b></span></span></button></figure></div></section>
+<section class="g-step" id="browser"><div class="g-num" aria-hidden="true">3</div><div class="g-content"><p class="g-kicker">Шаг 3</p><h3>Выберите «Браузер»</h3><p>В окне <b>Добавить источник</b> выберите <b>Браузер</b>&nbsp;<span class="g-nb"><i>1</i></span> и нажмите <b>Создать новый источник</b>&nbsp;<span class="g-nb"><i>2</i>.</span></p><figure class="g-shot"><button class="g-zoom" type="button" title="Нажмите на картинку, чтобы увеличить" aria-label="Нажмите на картинку, чтобы увеличить"><span class="g-frame"><img src="../../assets/ru/obs-2-add.jpg?v=bc1f41676b" loading="lazy" width="1318" height="784" alt="Скриншот: Выберите «Браузер»"><span class="mk" style="left:1.82%;top:6.51%;width:23.29%;height:5.11%"><b>1</b></span><span class="mk mk-l" style="left:28.38%;top:8.8%;width:68.66%;height:9.82%"><b>2</b></span></span></button></figure></div></section>
+<section class="g-step" id="paste"><div class="g-num" aria-hidden="true">4</div><div class="g-content"><p class="g-kicker">Шаг 4</p><h3>Вставьте адрес и задайте размер</h3><p><b>Ссылка</b>&nbsp;<span class="g-nb"><i>1</i>:</span> очистите поле и вставьте адрес (Ctrl+V).<br><b>Ширина</b>&nbsp;<span class="g-nb"><i>2</i>:</span> <code>1920</code>, <b>Высота</b>&nbsp;<span class="g-nb"><i>3</i>:</span> <code>1080</code>.</p><p>Остальное оставьте как есть и нажмите <b>OK</b>&nbsp;<span class="g-nb"><i>4</i>.</span></p><p class="g-note">Просмотр вверху этого окна обновляется только после OK. Когда вы потом снова откроете свойства, там будет слайд, как на картинке.</p><figure class="g-shot narrow"><button class="g-zoom" type="button" title="Нажмите на картинку, чтобы увеличить" aria-label="Нажмите на картинку, чтобы увеличить"><span class="g-frame"><img src="../../assets/ru/obs-3-props.jpg?v=df978429bb" loading="lazy" width="946" height="975" alt="Скриншот: Вставьте адрес и задайте размер"><span class="mk" style="left:10.68%;top:52.21%;width:84.78%;height:4.1%"><b>1</b></span><span class="mk" style="left:10.68%;top:57.13%;width:84.78%;height:4.61%"><b>2</b></span><span class="mk" style="left:10.68%;top:62.46%;width:84.78%;height:4.61%"><b>3</b></span><span class="mk" style="left:79.6%;top:93.64%;width:6.98%;height:4.61%"><b>4</b></span></span></button></figure></div></section>
+<section class="g-step" id="done"><div class="g-num" aria-hidden="true">5</div><div class="g-content"><p class="g-kicker">Шаг 5</p><h3>Проверьте результат</h3><p>Теперь текущий слайд появляется в OBS и меняется вместе с проектором. OBS запоминает источник — делать это нужно только один раз.</p><p>Если слайд не заполняет кадр, щёлкните источник правой кнопкой и выберите <b>Преобразовать → Подогнать по размеру экрана</b> (Ctrl+F).</p><figure class="g-shot"><button class="g-zoom" type="button" title="Нажмите на картинку, чтобы увеличить" aria-label="Нажмите на картинку, чтобы увеличить"><span class="g-frame"><img src="../../assets/ru/obs-4-result.jpg?v=066e439eb5" loading="lazy" width="1486" height="915" alt="Скриншот: Проверьте результат"></span></button></figure><p class="g-tip"><b>Совет.</b> Чтобы, когда ничего не показывается, в трансляции была видна камера, в Sermon выберите <b>Настройки → Показ → Экран между службами → Ничего</b>: OBS получит прозрачную страницу. Чтобы спрятать слайды только из трансляции, нажмите <b>Скрыть</b> рядом с OBS в Sermon — на проекторе показ продолжится.</p></div></section>
+</section>
+<section class="g-part g-extra" id="extra"><h2>Дополнительно: автоматическое переключение сцен OBS</h2><p class="g-part-lead">Sermon может переключать OBS на выбранную сцену, когда что-то выводится на экран, и возвращать обратно, когда вы скрываете показ. Для этого нужен встроенный в OBS сервер WebSocket. Слайды в любом случае попадают в OBS через источник «Браузер».</p>
+<section class="g-step" id="ws-open"><div class="g-num" aria-hidden="true">A</div><div class="g-content"><h3>Откройте настройки WebSocket</h3><p>В OBS откройте <b>Сервис</b>&nbsp;<span class="g-nb"><i>1</i></span> → <b>Настройки сервера WebSocket</b>&nbsp;<span class="g-nb"><i>2</i>.</span></p><figure class="g-shot"><button class="g-zoom" type="button" title="Нажмите на картинку, чтобы увеличить" aria-label="Нажмите на картинку, чтобы увеличить"><span class="g-frame"><img src="../../assets/ru/obs-5-tools.jpg?v=4915846639" loading="lazy" width="1486" height="915" alt="Скриншот: Откройте настройки WebSocket"><span class="mk" style="left:45.69%;top:-0.11%;width:6.53%;height:3.5%"><b>1</b></span><span class="mk" style="left:45.96%;top:27.54%;width:23.08%;height:3.82%"><b>2</b></span></span></button></figure></div></section>
+<section class="g-step" id="ws-on"><div class="g-num" aria-hidden="true">B</div><div class="g-content"><h3>Включите сервер</h3><p>Отметьте <b>Включить сервер WebSocket</b>&nbsp;<span class="g-nb"><i>1</i>.</span> Введите свой пароль в <b>Пароль сервера</b>&nbsp;<span class="g-nb"><i>2</i></span> или оставьте сгенерированный. Нажмите <b>OK</b>&nbsp;<span class="g-nb"><i>3</i>.</span></p><figure class="g-shot narrow"><button class="g-zoom" type="button" title="Нажмите на картинку, чтобы увеличить" aria-label="Нажмите на картинку, чтобы увеличить"><span class="g-frame"><img src="../../assets/ru/obs-6-ws.jpg?v=619780e094" loading="lazy" width="848" height="752" alt="Скриншот: Включите сервер"><span class="mk" style="left:26.18%;top:7.19%;width:30.19%;height:3.59%"><b>1</b></span><span class="mk" style="left:26.18%;top:41.22%;width:49.76%;height:5.32%"><b>2</b></span><span class="mk" style="left:60.5%;top:91.89%;width:7.78%;height:5.99%"><b>3</b></span></span></button></figure></div></section>
+<section class="g-step" id="ws-info"><div class="g-num" aria-hidden="true">C</div><div class="g-content"><h3>Узнайте адрес сервера и пароль</h3><p>Снова откройте <b>Сервис → Настройки сервера WebSocket</b> и нажмите <b>Показать сведения о подключении</b>. В этом окне всё, что нужно для Sermon: <b>IP сервера</b>&nbsp;<span class="g-nb"><i>1</i></span> — адрес компьютера, на котором работает OBS, <b>Порт сервера</b>&nbsp;<span class="g-nb"><i>2</i></span> и <b>Пароль сервера</b>&nbsp;<span class="g-nb"><i>3</i>.</span> Рядом с каждым есть кнопка <b>Копировать</b>.</p><p class="g-note">Если OBS и Sermon на одном компьютере, в Sermon можно оставить адрес <code>localhost</code>. IP сервера нужен, когда OBS на другом компьютере.</p><figure class="g-shot narrow"><button class="g-zoom" type="button" title="Нажмите на картинку, чтобы увеличить" aria-label="Нажмите на картинку, чтобы увеличить"><span class="g-frame"><img src="../../assets/ru/obs-7-connect.jpg?v=c178f5784a" loading="lazy" width="568" height="517" alt="Скриншот: Узнайте адрес сервера и пароль"><span class="mk" style="left:36.44%;top:2.9%;width:43.13%;height:7.74%"><b>1</b></span><span class="mk" style="left:36.44%;top:13.15%;width:43.13%;height:7.74%"><b>2</b></span><span class="mk" style="left:36.44%;top:23.21%;width:43.13%;height:7.74%"><b>3</b></span></span></button></figure></div></section>
+<section class="g-step" id="ws-sermon"><div class="g-num" aria-hidden="true">D</div><div class="g-content"><h3>Подключите Sermon</h3><p>В Sermon откройте <b>Настройки → OBS и сеть</b> и включите <b>Включить интеграцию с OBS</b>&nbsp;<span class="g-nb"><i>1</i>.</span></p><p><b>Адрес сервера</b>&nbsp;<span class="g-nb"><i>2</i>:</span> вставьте <b>IP сервера</b> из предыдущего шага или оставьте <code>localhost</code>, если OBS на этом компьютере. <b>Порт</b>: <code>4455</code>. <b>Пароль</b>&nbsp;<span class="g-nb"><i>3</i>:</span> вставьте <b>Пароль сервера</b>.</p><p>Нажмите <b>Проверить подключение</b>&nbsp;<span class="g-nb"><i>4</i></span> — должно появиться <b>Подключено</b>. Выберите сцену в <b>Сцена показа</b> и нажмите <b>Сохранить</b>.</p><figure class="g-shot"><button class="g-zoom" type="button" title="Нажмите на картинку, чтобы увеличить" aria-label="Нажмите на картинку, чтобы увеличить"><span class="g-frame"><img src="../../assets/ru/obs-sermon-settings.jpg?v=3fac74a2a0" loading="lazy" width="1311" height="815" alt="Скриншот: Подключите Sermon"><span class="mk" style="left:84.29%;top:17.67%;width:4.88%;height:4.66%"><b>1</b></span><span class="mk mk-l" style="left:1.6%;top:26.63%;width:95.8%;height:6.63%"><b>2</b></span><span class="mk mk-l" style="left:1.6%;top:48.96%;width:95.8%;height:6.75%"><b>3</b></span><span class="mk" style="left:1.6%;top:56.2%;width:31.66%;height:6.38%"><b>4</b></span></span></button></figure></div></section>
+</section>
+<section class="g-part" id="faq"><h2>Если что-то не работает</h2><details class="g-faq"><summary>В OBS пустой или белый кадр<svg class="ic ic-16"><use href="#i-chevron-down"/></svg></summary><div class="g-faq-body"><ul><li>Проверьте, что Sermon открыт и в правой панели рядом с <b>OBS</b> написано <b>Запущен</b>.</li><li>Скопируйте адрес ещё раз кнопкой <b>Адрес</b> и вставьте его в поле <b>Ссылка</b> источника.</li><li>Нажмите <b>Обновить</b> под просмотром в OBS.</li></ul></div></details>
+<details class="g-faq"><summary>OBS работает на другом компьютере<svg class="ic ic-16"><use href="#i-chevron-down"/></svg></summary><div class="g-faq-body"><ul><li>Оба компьютера должны быть в одной сети (тот же роутер или Wi-Fi).</li><li>При первом запуске Sermon Windows может спросить, разрешить ли ему доступ к сети. Нажмите <b>Разрешить</b>. Если вы закрыли это окно, разрешите Sermon в настройках брандмауэра Windows.</li><li>Если в вашей сети OBS не находит компьютер по имени, укажите в адресе его IP-адрес вместо имени, например <code>http://192.168.1.25:8090/display</code>. На компьютере с Sermon он есть в <b>Параметры → Сеть и Интернет → Wi-Fi</b> (или <b>Ethernet</b>) <b>→ свойства → IPv4-адрес</b>.</li></ul></div></details>
+<details class="g-faq"><summary>Адрес перестал работать<svg class="ic ic-16"><use href="#i-chevron-down"/></svg></summary><div class="g-faq-body"><ul><li>Обновите Sermon до 0.2.4 или новее и скопируйте адрес ещё раз — теперь он не меняется.</li><li>Если компьютер переименовали, адрес меняется вместе с ним. Скопируйте его заново.</li><li>Если адрес заканчивается на <code>:8091</code> или больше, порт 8090 был занят — например, была открыта вторая копия Sermon. Закройте все копии и запустите Sermon снова.</li></ul></div></details>
+<details class="g-faq"><summary>Слайд маленький или обрезан<svg class="ic ic-16"><use href="#i-chevron-down"/></svg></summary><div class="g-faq-body"><p>В свойствах источника укажите <b>Ширина</b> 1920 и <b>Высота</b> 1080. Затем щёлкните источник правой кнопкой → <b>Преобразовать → Подогнать по размеру экрана</b>.</p></div></details>
+<details class="g-faq"><summary>Переключение сцен не подключается<svg class="ic ic-16"><use href="#i-chevron-down"/></svg></summary><div class="g-faq-body"><ul><li>Проверьте, что в OBS отмечено <b>Включить сервер WebSocket</b>, а пароль в Sermon точно такой же.</li><li>Порт в обеих программах — <code>4455</code>.</li><li>Если OBS на другом компьютере, в <b>Адрес сервера</b> должен быть <b>IP сервера</b> из окна <b>Показать сведения о подключении</b>, а не <code>localhost</code>. Разрешите OBS в брандмауэре того компьютера.</li></ul></div></details></section>
+    </article>
+  </div>
+
+  <section class="g-cta">
+    <div class="g-cta-inner">
+      <img src="../../assets/favicon.png" alt="" width="56" height="56">
+      <div>
+        <h2>Ещё нет Sermon?</h2>
+        <p>Бесплатно, работает без интернета, без регистрации.</p>
+      </div>
+      <div class="g-cta-buttons">
+        <a class="btn btn-gold btn-lg" data-download="windows" href="https://github.com/AndreyYushchenko/Sermon-Releases/releases">
+          <span class="win-logo" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          Скачать для Windows
+          <svg class="ic"><use href="#i-download"/></svg>
+        </a>
+        <a class="g-cta-link" href="../../ru/">О Sermon <svg class="ic ic-16"><use href="#i-arrow-right"/></svg></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <a class="logo logo-sm" href="../../ru/"><img class="logo-icon" src="../../assets/favicon.png" alt="" width="36" height="36"><span>Sermon</span></a>
+  <nav class="footer-links" aria-label="Footer">
+    <a href="../../ru/#features">Возможности</a>
+    <a href="../../ru/#screenshots">Скриншоты</a>
+    <a href="#top">OBS</a>
+    <a data-support href="mailto:sermon.support@gmail.com?subject=Sermon">Поддержка</a>
+    <a href="../../ru/#platforms">Скачать</a>
+  </nav>
+  <div class="social">
+    <a data-support href="mailto:sermon.support@gmail.com?subject=Sermon" aria-label="Email"><svg class="ic"><use href="#i-mail"/></svg></a>
+    <a href="https://github.com/AndreyYushchenko/Sermon-Releases/releases" aria-label="Все версии"><svg class="ic"><use href="#i-globe"/></svg></a>
+  </div>
+</footer>
+
+<dialog class="modal" tabindex="-1" id="support-dialog" aria-labelledby="support-title">
+  <button class="modal-close" data-close aria-label="Закрыть"><svg class="ic"><use href="#i-x"/></svg></button>
+  <div class="modal-icon"><svg class="ic"><use href="#i-mail"/></svg></div>
+  <h2 id="support-title">Написать в поддержку</h2>
+  <p>Вопросы, идеи или что-то не работает в Sermon? Напишите нам — мы отвечаем на каждое письмо.</p>
+  <div class="email-row">
+    <span class="email" aria-live="polite">sermon.support@gmail.com</span>
+    <button class="btn btn-outline btn-copy" data-copied="Скопировано" aria-label="Скопировать адрес" title="Скопировать адрес"><svg class="ic ic-16"><use href="#i-copy"/></svg></button>
+  </div>
+  <div class="modal-actions">
+    <a class="btn btn-blue" target="_blank" rel="noopener" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=sermon.support@gmail.com&amp;su=Sermon">Написать в Gmail <svg class="ic ic-16"><use href="#i-external"/></svg></a>
+    <a class="btn btn-outline" href="mailto:sermon.support@gmail.com?subject=Sermon">Открыть почтовую программу</a>
+  </div>
+</dialog>
+
+<dialog class="modal" tabindex="-1" id="download-dialog" aria-labelledby="download-title">
+  <button class="modal-close" data-close aria-label="Закрыть"><svg class="ic"><use href="#i-x"/></svg></button>
+  <div class="modal-icon modal-icon-download"><svg class="ic"><use href="#i-download"/></svg></div>
+  <h2 id="download-title">Загрузка началась</h2>
+  <p>Установщик сохраняется в загрузки браузера. Откройте его, когда он скачается.</p>
+  <p class="modal-hint" data-os="windows">Windows может предупредить, что приложение не распознано: нажмите «Подробнее», затем «Выполнить в любом случае».</p>
+  <p class="modal-hint" data-os="mac">Если macOS не открывает программу, щёлкните Sermon в «Программах» правой кнопкой и выберите «Открыть».</p>
+  <div class="modal-actions">
+    <a class="btn btn-outline dl-again" href="https://github.com/AndreyYushchenko/Sermon-Releases/releases">Не началась? Скачать ещё раз</a>
+    <a class="modal-link" target="_blank" rel="noopener" href="https://github.com/AndreyYushchenko/Sermon-Releases/releases">Все версии <svg class="ic ic-14"><use href="#i-external"/></svg></a>
+  </div>
+</dialog>
+
+<dialog class="modal" tabindex="-1" id="mobile-dialog" aria-labelledby="mobile-title">
+  <button class="modal-close" data-close aria-label="Закрыть"><svg class="ic"><use href="#i-x"/></svg></button>
+  <div class="modal-icon"><svg class="ic"><use href="#i-monitor"/></svg></div>
+  <h2 id="mobile-title">Откройте эту страницу на компьютере</h2>
+  <p>Sermon работает на Windows и macOS. Откройте эту страницу на компьютере, чтобы скачать программу. Приложение для iOS скоро появится.</p>
+  <div class="modal-actions"><button class="btn btn-blue" data-close>Закрыть</button></div>
+</dialog>
+
+<dialog class="g-lightbox" aria-label="Нажмите на картинку, чтобы увеличить">
+  <button class="modal-close" data-close aria-label="Закрыть"><svg class="ic"><use href="#i-x"/></svg></button>
+  <div class="g-lightbox-body"></div>
+</dialog>
+
+<script src="../../app.js?v=c78918cf45"></script>
+</body>
+</html>
