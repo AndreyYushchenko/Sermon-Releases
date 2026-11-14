@@ -32,7 +32,7 @@
 <link rel="alternate" hreflang="x-default" href="https://andreyyushchenko.github.io/Sermon-Releases/privacy/">
 <link rel="canonical" href="https://andreyyushchenko.github.io/Sermon-Releases/privacy/">
 <link rel="icon" type="image/png" href="../assets/favicon.png">
-<link rel="stylesheet" href="../style.css?v=accbaf0cb9">
+<link rel="stylesheet" href="../style.css?v=24ed637c47">
 </head>
 <body class="guide-page privacy-page" data-lang="en" data-base="../" data-page="privacy" data-langs="en uk ru de pl ro es ko pt">
 
@@ -71,6 +71,7 @@
   <nav class="nav-links" aria-label="Main">
     <a href="../#features">Features</a>
     <a href="../#screenshots">Screenshots</a>
+    <a href="../library/">Library</a>
     <a href="../obs/">OBS</a>
     <a data-support href="mailto:sermon.support@gmail.com?subject=Sermon">Support</a>
     <a href="../#platforms">Download</a>
@@ -96,7 +97,7 @@
   </button>
   <a class="btn btn-gold nav-download" data-download="windows" href="https://github.com/AndreyYushchenko/Sermon-Releases/releases">
     <span class="win-logo" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-    Download for Windows
+    <span class="dl-label" data-mac="Download for Mac">Download for Windows</span>
     <svg class="ic"><use href="#i-arrow-right"/></svg>
   </a>
   <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><svg class="ic"><use href="#i-menu"/></svg></button>
@@ -109,7 +110,7 @@
       <p class="eyebrow">Sermon</p>
       <h1>Privacy <span class="gold">Policy</span></h1>
       <p class="lead">Sermon is a free presentation app for churches, made by the Sermon team. This page explains what happens to your information when you use the Sermon app and this website.</p>
-      <p class="p-updated">Last updated: 11 October 2026</p>
+      <p class="p-updated">Last updated: 12 October 2026</p>
     </div>
   </section>
 
@@ -130,7 +131,7 @@
     <article class="g-body">
 <section class="g-before" id="short"><h2>In short</h2><ul><li>Sermon has no accounts, no ads, no analytics and no tracking.</li><li>Your songs, Bible texts, announcements, photos, videos and settings stay on your computer.</li><li>We don’t collect, sell or share personal data.</li><li>The app goes online only for the features listed below, and only to the services named there.</li></ul></section>
 <section class="g-part p-part" id="device"><h2>Data on your computer</h2><p>Your library, playlists, timers and settings are stored in Sermon’s data folder on your computer. This includes the OBS server address and password if you enter them. None of it is sent to us.</p><p>Backups are saved to the folder you choose in <b>Settings → Backup → Backup folder</b>. If that folder is a USB drive or a cloud folder such as Google Drive or OneDrive, the copies are handled by that drive or service.</p><p>Uninstalling Sermon leaves your data folder in place, so a reinstall keeps your library. You can delete the folder yourself at any time.</p></section>
-<section class="g-part p-part" id="online"><h2>When the app goes online</h2><p><b>Updates.</b> At every start Sermon asks GitHub whether a newer version exists, and downloads the installer from GitHub when you choose to update. GitHub sees your IP address, as described in the <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub Privacy Statement</a>. You can turn the check off in <b>Settings → General → Updates → Check for updates automatically</b>.</p><p><b>Photos and videos from the internet.</b> When you use <b>Search online</b>, the words you search for are sent to Pexels, and the pictures or videos you pick are downloaded from Pexels. See the <a href="https://www.pexels.com/privacy-policy/" target="_blank" rel="noopener">Pexels Privacy Policy</a>.</p><p><b>YouTube.</b> When you add a YouTube link, Sermon downloads the free yt-dlp tool from GitHub once and plays the video from YouTube. In OBS the video is embedded from youtube.com. YouTube is a Google service: see the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.</p><p>Nothing else is sent: no usage statistics, no crash reports and no personal data.</p></section>
+<section class="g-part p-part" id="online"><h2>When the app goes online</h2><p><b>Updates.</b> At every start Sermon asks GitHub whether a newer version exists, and downloads the installer from GitHub when you choose to update. GitHub sees your IP address, as described in the <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub Privacy Statement</a>. You can turn the check off in <b>Settings → General → Updates → Check for updates automatically</b>.</p><p><b>Photos and videos from the internet.</b> When you use <b>Search online</b>, the words you search for are sent to Pexels, and the pictures or videos you pick are downloaded from Pexels. See the <a href="https://www.pexels.com/privacy-policy/" target="_blank" rel="noopener">Pexels Privacy Policy</a>.</p><p><b>YouTube.</b> When you add a YouTube link, Sermon downloads the free yt-dlp tool from GitHub once and plays the video from YouTube. In OBS the video is embedded from youtube.com. YouTube is a Google service: see the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.</p><p><b>Presentation module.</b> If no program on your computer opens a PowerPoint or OpenDocument file, Sermon offers to download LibreOffice once from the LibreOffice website (The Document Foundation) into its own folder. Your presentations are converted on your computer and are not sent anywhere. See the <a href="https://www.documentfoundation.org/privacy" target="_blank" rel="noopener">Document Foundation Privacy Policy</a>.</p><p>Nothing else is sent: no usage statistics, no crash reports and no personal data.</p></section>
 <section class="g-part p-part" id="network"><h2>On your local network</h2><p><b>Slides for OBS.</b> Sermon shows the current slide as a web page on your network (port 8090), so OBS or a browser on another computer can show it. Anyone on the same network can open that page. It shows only what is on the projector. When Sermon first starts, Windows may ask whether to allow this.</p><p><b>OBS integration</b> works only when you turn on <b>Enable OBS integration</b>. Sermon then connects to OBS with the password you entered, switches scenes and keeps the address in your Browser sources up to date. If OBS can’t be reached at the saved address, Sermon looks for it on your local network by checking which computers answer on the OBS port. All of this stays inside your network.</p></section>
 <section class="g-part p-part" id="website"><h2>This website</h2><p>The site is hosted on GitHub Pages. GitHub may log visitors’ IP addresses for security, as described in the <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub Privacy Statement</a>.</p><p>There are no cookies, analytics or ads. Fonts are served from this site, not from Google. Your browser remembers the language and the light or dark theme you choose (local storage); this never leaves your browser.</p><p>The download buttons ask GitHub for the newest release, so your browser contacts api.github.com.</p></section>
 <section class="g-part p-part" id="email"><h2>If you write to us</h2><p>When you email <a href="mailto:sermon.support@gmail.com">sermon.support@gmail.com</a>, we receive your address and your message and use them only to answer you. The mailbox is run by Gmail (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>). Ask us and we will delete your emails.</p></section>
@@ -149,7 +150,7 @@
       <div class="g-cta-buttons">
         <a class="btn btn-gold btn-lg" data-download="windows" href="https://github.com/AndreyYushchenko/Sermon-Releases/releases">
           <span class="win-logo" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-          Download for Windows
+          <span class="dl-label" data-mac="Download for Mac">Download for Windows</span>
           <svg class="ic"><use href="#i-download"/></svg>
         </a>
         <a class="g-cta-link" href="../">About Sermon <svg class="ic ic-16"><use href="#i-arrow-right"/></svg></a>
@@ -163,6 +164,7 @@
   <nav class="footer-links" aria-label="Footer">
     <a href="../#features">Features</a>
     <a href="../#screenshots">Screenshots</a>
+    <a href="../library/">Library</a>
     <a href="../obs/">OBS</a>
     <a data-support href="mailto:sermon.support@gmail.com?subject=Sermon">Support</a>
     <a href="../#platforms">Download</a>
@@ -211,6 +213,6 @@
 </dialog>
 
 
-<script src="../app.js?v=c78918cf45"></script>
+<script src="../app.js?v=a0410deab3"></script>
 </body>
 </html>

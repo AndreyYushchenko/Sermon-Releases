@@ -200,6 +200,21 @@
   const mobileDialog = document.getElementById('mobile-dialog');
   const phone = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ||
     (/Macintosh/.test(navigator.userAgent) && navigator.maxTouchPoints > 1);
+
+  // On a Mac the main (gold) buttons offer the Mac version instead of the Windows one.
+  const uaPlatform = (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || '';
+  const isMac = !phone && (/mac/i.test(uaPlatform) || /Macintosh|Mac OS X/.test(navigator.userAgent));
+  if (isMac) {
+    const apple = '<svg class="apple-logo" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.37 12.62c.03 2.9 2.54 3.87 2.57 3.88-.02.07-.4 1.38-1.33 2.73-.8 1.17-1.63 2.33-2.94 2.35-1.29.03-1.7-.76-3.17-.76s-1.93.74-3.15.79c-1.26.05-2.22-1.26-3.03-2.42-1.65-2.38-2.9-6.73-1.22-9.66.84-1.46 2.33-2.38 3.95-2.4 1.24-.03 2.4.83 3.16.83.75 0 2.17-1.03 3.66-.88.62.03 2.37.25 3.49 1.9-.09.06-2.08 1.22-2.06 3.64M13.96 5.52c.67-.81 1.12-1.93.99-3.05-.96.04-2.13.64-2.82 1.45-.62.72-1.16 1.86-1.02 2.96 1.08.08 2.18-.55 2.85-1.36"/></svg>';
+    document.querySelectorAll('.btn-gold[data-download="windows"]').forEach((a) => {
+      const label = a.querySelector('.dl-label');
+      if (!label || !label.dataset.mac) return;
+      a.dataset.download = 'mac';
+      label.textContent = label.dataset.mac;
+      const logo = a.querySelector('.win-logo');
+      if (logo) logo.outerHTML = apple;
+    });
+  }
   document.querySelectorAll('[data-download]').forEach((a) => a.addEventListener('click', (e) => {
     if (phone) {
       e.preventDefault();

@@ -81,6 +81,8 @@ button { font: inherit; color: inherit; }
 .win-logo { display: grid; grid-template-columns: 1fr 1fr; gap: 1.8px; width: 18px; height: 18px; flex: none; }
 .win-logo i { background: currentColor; border-radius: 1px; }
 .btn-lg .win-logo { width: 20px; height: 20px; gap: 2px; }
+.apple-logo { width: 20px; height: 20px; flex: none; margin-top: -2px; }
+.btn-lg .apple-logo { width: 22px; height: 22px; }
 .win-logo-lg { width: 46px; height: 46px; gap: 4.6px; }
 .win-logo-lg i { background: linear-gradient(225deg, #4aa3ff, #1f6fff); border-radius: 1.4px; }
 
@@ -258,6 +260,11 @@ button { font: inherit; color: inherit; }
 :lang(ko) body, body:lang(ko) { word-break: keep-all; }
 
 /* ---- Narrower screens ---- */
+/* The gold download button only fits next to the full menu on wide screens;
+   below that the "Download" menu link does its job. */
+@media (max-width: 1760px) {
+  .nav-download { display: none; }
+}
 @media (max-width: 1360px) {
   /* Flow instead of the 1440 px frame's fixed positions: a longer language
      can't run under the features card. */
@@ -709,3 +716,425 @@ button { font: inherit; color: inherit; }
 .privacy .p-part h2 { font-size: 26px; letter-spacing: -.4px; }
 .privacy .p-part p { margin-top: 12px; }
 .privacy .g-before h2 { font-size: 22px; }
+
+/* ==========================================================================
+   Library / Resources Page (/library/)
+   ========================================================================== */
+.lib-main { min-height: 80vh; }
+.lib-hero .g-hero-inner { max-width: 1200px; }
+.lib-facts li { gap: 10px; }
+
+.lib-content-section {
+  position: relative;
+  background: var(--bg);
+  padding: 0 0 64px;
+}
+
+.lib-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 40px 32px;
+}
+
+/* Toolbar: Search & Type Tabs */
+.lib-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.lib-search-wrap {
+  position: relative;
+  flex: 1 1 360px;
+  max-width: 520px;
+}
+
+.lib-search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-3);
+  pointer-events: none;
+}
+
+.lib-search-input {
+  width: 100%;
+  height: 48px;
+  padding: 0 44px 0 48px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  color: var(--text);
+  font-size: 15px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color .15s, box-shadow .15s, background .15s;
+}
+
+.lib-search-input:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(242, 196, 109, .2);
+}
+
+.lib-search-clear {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--text-3);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.lib-search-clear:hover { color: var(--text); background: rgba(255, 255, 255, .1); }
+
+/* Tabs */
+.lib-tabs {
+  display: inline-flex;
+  background: rgba(255, 255, 255, .04);
+  border: 1px solid var(--line);
+  padding: 4px;
+  border-radius: 12px;
+  gap: 4px;
+}
+
+.lib-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 16px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: var(--text-2);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .15s;
+}
+
+.lib-tab:hover { color: #fff; background: rgba(255, 255, 255, .06); }
+.lib-tab.active {
+  background: var(--blue-btn);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(31, 111, 255, .35);
+}
+
+.lib-tab-count {
+  font-size: 11.5px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .18);
+  font-weight: 700;
+}
+
+/* Filter Row: Chips & Status */
+.lib-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 32px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.lib-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.lib-chip {
+  height: 34px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .05);
+  border: 1px solid rgba(255, 255, 255, .12);
+  color: var(--text-2);
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all .15s;
+}
+
+.lib-chip:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, .1);
+  border-color: rgba(255, 255, 255, .25);
+}
+
+.lib-chip.active {
+  background: rgba(242, 196, 109, .15);
+  border-color: var(--gold);
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.lib-status {
+  font-size: 14px;
+  color: var(--text-3);
+}
+.lib-status b { color: var(--gold); }
+
+/* Catalog Cards Grid: compact one-row cards */
+.lib-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 10px;
+}
+
+.lib-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 10px 10px 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  transition: border-color .15s, background-color .15s;
+}
+
+.lib-card:hover { border-color: rgba(242, 196, 109, .45); }
+
+.lib-card-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+.lib-icon-song {
+  background: rgba(59, 130, 246, .16);
+  color: #60a5fa;
+}
+
+.lib-icon-bible {
+  background: rgba(242, 196, 109, .16);
+  color: var(--gold);
+}
+
+.lib-card-body {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.lib-card-title {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.lib-card-meta {
+  font-size: 12.5px;
+  color: var(--text-3);
+  margin-top: 2px;
+}
+
+.lib-card-lang {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .4px;
+  color: var(--text-2);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 0 4px;
+  margin-right: 4px;
+}
+
+.lib-dl-btn {
+  flex: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, var(--gold-from), var(--gold-to));
+  color: var(--gold-ink);
+  transition: filter .15s;
+}
+
+.lib-dl-btn:hover { filter: brightness(1.08); }
+.lib-dl-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+/* Empty State */
+.lib-empty {
+  text-align: center;
+  padding: 64px 20px;
+  background: var(--card);
+  border: 1px dashed var(--line);
+  border-radius: 18px;
+  margin-top: 24px;
+}
+
+.lib-empty-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .05);
+  color: var(--text-3);
+  margin-bottom: 16px;
+}
+
+.lib-empty h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.lib-empty p {
+  color: var(--text-2);
+  font-size: 15px;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+/* How to Import Guide */
+.lib-howto-wrap {
+  margin-top: 72px;
+  padding-top: 48px;
+  border-top: 1px solid var(--line);
+}
+
+.lib-howto-heading {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -.6px;
+  text-align: center;
+  color: var(--text);
+  margin-bottom: 36px;
+}
+
+.lib-howto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 28px;
+}
+
+.lib-howto-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 32px 28px;
+  position: relative;
+}
+
+.lib-howto-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.lib-howto-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+.lib-badge-music {
+  background: rgba(59, 130, 246, .18);
+  color: #60a5fa;
+  border: 1px solid rgba(59, 130, 246, .3);
+}
+
+.lib-badge-bible {
+  background: rgba(242, 196, 109, .18);
+  color: var(--gold);
+  border: 1px solid rgba(242, 196, 109, .3);
+}
+
+.lib-howto-header h3 {
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.lib-howto-steps {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 16px;
+}
+
+.lib-howto-steps li {
+  position: relative;
+  padding-left: 32px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--text-2);
+}
+
+.lib-howto-steps li::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 7px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 8px var(--gold);
+}
+
+.lib-howto-steps code {
+  background: rgba(255, 255, 255, .1);
+  padding: 2px 6px;
+  border-radius: 5px;
+  color: var(--gold);
+  font-size: 13.5px;
+}
+
+.lib-howto-steps b {
+  color: #fff;
+}
+
+/* Light theme overrides */
+[data-theme="light"] .lib-content-section { background: var(--bg); }
+[data-theme="light"] .lib-search-input { background: #ffffff; border-color: var(--line); color: var(--text); }
+[data-theme="light"] .lib-tabs { background: rgba(0, 0, 0, .04); border-color: var(--line); }
+[data-theme="light"] .lib-chip { background: #ffffff; border-color: var(--line); color: var(--text-2); }
+[data-theme="light"] .lib-chip.active { background: rgba(242, 196, 109, .35); border-color: #b47a14; color: #784c00; }
+[data-theme="light"] .lib-card { background: #ffffff; border-color: var(--line); }
+[data-theme="light"] .lib-card:hover { border-color: #c98e26; }
+[data-theme="light"] .lib-howto-card { background: #ffffff; border-color: var(--line); }
+[data-theme="light"] .lib-howto-steps b { color: #111827; }
+[data-theme="light"] .lib-howto-steps code { background: rgba(0, 0, 0, .06); color: #9c6508; }
+
+@media (max-width: 768px) {
+  .lib-container { padding: 24px 16px; }
+  .lib-toolbar { flex-direction: column; align-items: stretch; }
+  .lib-search-wrap { max-width: 100%; }
+  .lib-tabs { width: 100%; justify-content: space-between; }
+  .lib-tab { flex: 1; justify-content: center; padding: 0 10px; font-size: 13px; }
+  .lib-grid { grid-template-columns: 1fr; }
+  .lib-howto-heading { font-size: 24px; margin-bottom: 24px; }
+}
+
