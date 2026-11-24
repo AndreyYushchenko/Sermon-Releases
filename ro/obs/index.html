@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cum afișezi diapozitivele Sermon în OBS: ghid pas cu pas</title>
+<meta name="description" content="Adaugă Sermon în OBS Studio ca sursă Browser în 5 minute: copiezi adresa, o lipești în OBS și gata. Imagini pentru fiecare pas, schimbarea scenelor și rezolvarea problemelor.">
+<meta property="og:title" content="Cum afișezi diapozitivele Sermon în OBS: ghid pas cu pas">
+<meta property="og:description" content="Adaugă Sermon în OBS Studio ca sursă Browser în 5 minute: copiezi adresa, o lipești în OBS și gata. Imagini pentru fiecare pas, schimbarea scenelor și rezolvarea problemelor.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:site_name" content="Sermon">
+<meta property="og:url" content="https://andreyyushchenko.github.io/Sermon-Releases/ro/obs/">
+<meta property="og:image" content="https://andreyyushchenko.github.io/Sermon-Releases/assets/en/obs-4-result.jpg?v=f3b8881fd8">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ro_RO">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cum afișezi diapozitivele Sermon în OBS: ghid pas cu pas">
+<meta name="twitter:description" content="Adaugă Sermon în OBS Studio ca sursă Browser în 5 minute: copiezi adresa, o lipești în OBS și gata. Imagini pentru fiecare pas, schimbarea scenelor și rezolvarea problemelor.">
+<meta name="twitter:image" content="https://andreyyushchenko.github.io/Sermon-Releases/assets/en/obs-4-result.jpg?v=f3b8881fd8">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "Diapozitivele Sermon în OBS", "description": "Adaugă Sermon în OBS Studio ca sursă Browser în 5 minute: copiezi adresa, o lipești în OBS și gata. Imagini pentru fiecare pas, schimbarea scenelor și rezolvarea problemelor.", "inLanguage": "ro", "totalTime": "PT5M", "tool": [{"@type": "HowToTool", "name": "Sermon"}, {"@type": "HowToTool", "name": "OBS Studio"}], "step": [{"@type": "HowToStep", "name": "Copiază adresa în Sermon", "url": "https://andreyyushchenko.github.io/Sermon-Releases/ro/obs/#copy", "text": "În panoul din dreapta, lângă OBS , apasă Adresă 1 . Linkul se copiază în clipboard. Arată cam așa: http://192.168.1.25:8090/display . Același link este în Setări → OBS și transmisie → Adresa pentru sursa Browser . Conține adresa IP a acestui computer. Dacă OBS rulează pe alt computer, conectează și Sermon la OBS : când routerul schimbă IP-ul unui computer, Sermon corectează singur adresa în OBS și nu mai trebuie s-o lipești.", "image": "https://andreyyushchenko.github.io/Sermon-Releases/assets/en/obs-sermon-panel.jpg?v=d0791d633f"}, {"@type": "HowToStep", "name": "Adaugă o sursă în OBS", "url": "https://andreyyushchenko.github.io/Sermon-Releases/ro/obs/#add", "text": "Deschide OBS Studio și selectează scena în care să apară diapozitivele, de exemplu scena cu camera. La Surse , apasă + 1 .", "image": "https://andreyyushchenko.github.io/Sermon-Releases/assets/en/obs-1-sources.jpg?v=57d3aa6d94"}, {"@type": "HowToStep", "name": "Alege „Browser”", "url": "https://andreyyushchenko.github.io/Sermon-Releases/ro/obs/#browser", "text": "În fereastra de adăugare a sursei, alege Browser 1 și creează o sursă nouă 2 .", "image": "https://andreyyushchenko.github.io/Sermon-Releases/assets/en/obs-2-add.jpg?v=7a14879f7b"}, {"@type": "HowToStep", "name": "Lipește adresa și setează dimensiunea", "url": "https://andreyyushchenko.github.io/Sermon-Releases/ro/obs/#paste", "text": "URL 1 : golește câmpul și lipește adresa (Ctrl+V). Lățime 2 : 1920 , Înălțime 3 : 1080 . Lasă restul cum este și apasă OK 4 .", "image": "https://andreyyushchenko.github.io/Sermon-Releases/assets/en/obs-3-props.jpg?v=807c5b879e"}, {"@type": "HowToStep", "name": "Verifică rezultatul", "url": "https://andreyyushchenko.github.io/Sermon-Releases/ro/obs/#done", "text": "Diapozitivul curent apare acum în OBS și se schimbă odată cu proiectorul. OBS ține minte sursa: faci asta o singură dată. Dacă diapozitivul nu umple imaginea, fă clic dreapta pe sursă și alege Transformare → Potrivește pe ecran (Ctrl+F).", "image": "https://andreyyushchenko.github.io/Sermon-Releases/assets/en/obs-4-result.jpg?v=f3b8881fd8"}]}</script>
+<meta name="theme-color" content="#070b14">
+<script>(function(){var t;try{t=localStorage.getItem('sermon-theme')}catch(e){}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';document.documentElement.dataset.theme=t;if(t==='light')document.querySelector('meta[name=theme-color]').content='#f7f4ee'})();</script>
+<link rel="alternate" hreflang="en" href="https://andreyyushchenko.github.io/Sermon-Releases/obs/">
+<link rel="alternate" hreflang="uk" href="https://andreyyushchenko.github.io/Sermon-Releases/uk/obs/">
+<link rel="alternate" hreflang="ru" href="https://andreyyushchenko.github.io/Sermon-Releases/ru/obs/">
+<link rel="alternate" hreflang="de" href="https://andreyyushchenko.github.io/Sermon-Releases/de/obs/">
+<link rel="alternate" hreflang="pl" href="https://andreyyushchenko.github.io/Sermon-Releases/pl/obs/">
+<link rel="alternate" hreflang="ro" href="https://andreyyushchenko.github.io/Sermon-Releases/ro/obs/">
+<link rel="alternate" hreflang="es" href="https://andreyyushchenko.github.io/Sermon-Releases/es/obs/">
+<link rel="alternate" hreflang="ko" href="https://andreyyushchenko.github.io/Sermon-Releases/ko/obs/">
+<link rel="alternate" hreflang="pt" href="https://andreyyushchenko.github.io/Sermon-Releases/pt/obs/">
+<link rel="alternate" hreflang="fr" href="https://andreyyushchenko.github.io/Sermon-Releases/fr/obs/">
+<link rel="alternate" hreflang="x-default" href="https://andreyyushchenko.github.io/Sermon-Releases/obs/">
+<link rel="canonical" href="https://andreyyushchenko.github.io/Sermon-Releases/ro/obs/">
+<link rel="icon" type="image/png" href="../../assets/favicon.png">
+<link rel="stylesheet" href="../../style.css?v=73d9036594">
+</head>
+<body class="guide-page" data-lang="ro" data-base="../../" data-page="obs" data-langs="en uk ru de pl ro es ko pt fr">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-book-open" viewBox="0 0 24 24"><path d="M12 5v16"/><path d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z"/></symbol>
+    <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></symbol>
+    <symbol id="i-megaphone" viewBox="0 0 24 24"><path d="M11 6a13 13 0 0 0 8.4-2.8A1 1 0 0 1 21 4v12a1 1 0 0 1-1.6.8A13 13 0 0 0 11 14H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z"/><path d="M6 14a12 12 0 0 0 2.4 7.2 2 2 0 0 0 3.2-2.4A8 8 0 0 1 10 14"/><path d="M8 6v8"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></symbol>
+    <symbol id="i-circle-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M10 8l6 4-6 4z"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><path d="M3 12h.01"/><path d="M3 18h.01"/><path d="M3 6h.01"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M8 6h13"/></symbol>
+    <symbol id="i-timer" viewBox="0 0 24 24"><line x1="10" x2="14" y1="2" y2="2"/><line x1="12" x2="15" y1="14" y2="11"/><circle cx="12" cy="14" r="8"/></symbol>
+    <symbol id="i-monitor" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+    <symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+    <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+    <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
+    <symbol id="i-smartphone" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol>
+  </defs>
+</svg>
+
+<header class="nav" id="top">
+  <a class="logo" href="../../ro/" aria-label="Sermon">
+    <img class="logo-icon" src="../../assets/favicon.png" alt="" width="36" height="36"><span>Sermon</span>
+  </a>
+  <nav class="nav-links" aria-label="Main">
+    <a href="../../ro/#features">Funcții</a>
+    <a href="../../ro/#screenshots">Capturi</a>
+    <a href="../../ro/library/">Bibliotecă</a>
+    <a href="#top" class="active" aria-current="page">OBS</a>
+    <a data-support href="mailto:sermon.support@gmail.com?subject=Sermon">Asistență</a>
+    <a href="../../ro/#platforms">Descarcă</a>
+  </nav>
+  <div class="lang">
+    <button class="lang-button" aria-haspopup="true" aria-expanded="false" aria-label="Limbă">
+      <svg class="ic ic-16"><use href="#i-globe"/></svg><span>RO</span><svg class="ic ic-14"><use href="#i-chevron-down"/></svg>
+    </button>
+    <div class="lang-menu" role="menu">
+      <a role="menuitem" href="../../obs/" data-lang="en" lang="en">English</a>
+      <a role="menuitem" href="../../uk/obs/" data-lang="uk" lang="uk">Українська</a>
+      <a role="menuitem" href="../../ru/obs/" data-lang="ru" lang="ru">Русский</a>
+      <a role="menuitem" href="../../de/obs/" data-lang="de" lang="de">Deutsch</a>
+      <a role="menuitem" href="../../pl/obs/" data-lang="pl" lang="pl">Polski</a>
+      <a role="menuitem" href="../../ro/obs/" data-lang="ro" lang="ro" aria-current="true">Română</a>
+      <a role="menuitem" href="../../es/obs/" data-lang="es" lang="es">Español</a>
+      <a role="menuitem" href="../../ko/obs/" data-lang="ko" lang="ko">한국어</a>
+      <a role="menuitem" href="../../pt/obs/" data-lang="pt" lang="pt">Português</a>
+      <a role="menuitem" href="../../fr/obs/" data-lang="fr" lang="fr">Français</a>
+    </div>
+  </div>
+  <button class="theme-toggle" aria-label="Temă luminoasă / întunecată" title="Temă luminoasă / întunecată">
+    <svg class="ic ic-moon"><use href="#i-moon"/></svg><svg class="ic ic-sun"><use href="#i-sun"/></svg>
+  </button>
+  <a class="btn btn-gold nav-download" data-download="windows" href="https://github.com/AndreyYushchenko/Sermon-Releases/releases">
+    <span class="win-logo" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+    <span class="dl-label" data-mac="Descarcă pentru Mac">Descarcă pentru Windows</span>
+    <svg class="ic"><use href="#i-arrow-right"/></svg>
+  </a>
+  <button class="nav-toggle" aria-label="Meniu" aria-expanded="false"><svg class="ic"><use href="#i-menu"/></svg></button>
+</header>
+
+<main class="guide">
+  <section class="g-hero">
+    <div class="g-hero-bg" aria-hidden="true"></div>
+    <div class="g-hero-inner">
+      <p class="eyebrow">Ghid · OBS Studio</p>
+      <h1>Diapozitivele Sermon <span class="gold">în OBS</span></h1>
+      <p class="lead">Adu cântările, versetele și anunțurile de pe proiector în transmisia live. Sermon îi dă lui OBS o pagină web cu diapozitivul curent: o adaugi o dată ca sursă <b>Browser</b> și de atunci urmează proiectorul.</p>
+      <ul class="g-facts">
+        <li><svg class="ic ic-16"><use href="#i-check"/></svg>Cam 5 minute</li>
+        <li><svg class="ic ic-16"><use href="#i-check"/></svg>OBS Studio 28 sau mai nou</li>
+        <li><svg class="ic ic-16"><use href="#i-check"/></svg>Acest computer sau altul din rețea</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="g-layout">
+    <aside class="g-toc" aria-label="Pe această pagină">
+      <p class="g-toc-title">Pe această pagină</p>
+      <nav>
+        <a href="#before">Înainte să începi</a>
+        <a href="#copy"><span>1</span>Copiază adresa în Sermon</a>
+        <a href="#add"><span>2</span>Adaugă o sursă în OBS</a>
+        <a href="#browser"><span>3</span>Alege „Browser”</a>
+        <a href="#paste"><span>4</span>Lipește adresa și setează dimensiunea</a>
+        <a href="#done"><span>5</span>Verifică rezultatul</a>
+        <a href="#extra">Conectează Sermon la OBS</a>
+        <a href="#faq">Dacă ceva nu merge</a>
+      </nav>
+    </aside>
+    <article class="g-body">
+<section class="g-before" id="before"><h2>Înainte să începi</h2><ul><li>Sermon <b>0.3.0</b> sau mai nou. Conectat la OBS, ține singur la zi adresa din OBS, chiar și când routerul dă unui computer o nouă adresă IP.</li><li><a href="https://obsproject.com/" target="_blank" rel="noopener">OBS Studio</a> instalat, pe acest computer sau pe altul din aceeași rețea.</li><li>Sermon deschis în timpul slujbei: OBS ia diapozitivele de acolo.</li></ul></section>
+<section class="g-part" id="steps"><h2>Conectare în 5 pași</h2>
+<section class="g-step" id="copy"><div class="g-num" aria-hidden="true">1</div><div class="g-content"><p class="g-kicker">Pasul 1</p><h3>Copiază adresa în Sermon</h3><p>În panoul din dreapta, lângă <b>OBS</b>, apasă <b>Adresă</b>&nbsp;<span class="g-nb"><i>1</i>.</span> Linkul se copiază în clipboard. Arată cam așa: <code>http://192.168.1.25:8090/display</code>.</p><p>Același link este în <b>Setări → OBS și transmisie → Adresa pentru sursa Browser</b>. Conține adresa IP a acestui computer. Dacă OBS rulează pe alt computer, <a href="#ws-open">conectează și Sermon la OBS</a>: când routerul schimbă IP-ul unui computer, Sermon corectează singur adresa în OBS și nu mai trebuie s-o lipești.</p><figure class="g-shot narrow"><button class="g-zoom" type="button" title="Apasă pe imagine ca s-o mărești" aria-label="Apasă pe imagine ca s-o mărești"><span class="g-frame"><img src="../../assets/en/obs-sermon-panel.jpg?v=d0791d633f" loading="lazy" width="504" height="470" alt="Captură de ecran: Copiază adresa în Sermon"><span class="mk mk-l" style="left:74.8%;top:89.57%;width:21.43%;height:7.66%"><b>1</b></span></span></button></figure></div></section>
+<section class="g-step" id="add"><div class="g-num" aria-hidden="true">2</div><div class="g-content"><p class="g-kicker">Pasul 2</p><h3>Adaugă o sursă în OBS</h3><p>Deschide OBS Studio și selectează scena în care să apară diapozitivele, de exemplu scena cu camera. La <b>Surse</b>, apasă <b>+</b>&nbsp;<span class="g-nb"><i>1</i>.</span></p><figure class="g-shot"><button class="g-zoom" type="button" title="Apasă pe imagine ca s-o mărești" aria-label="Apasă pe imagine ca s-o mărești"><span class="g-frame"><img src="../../assets/en/obs-1-sources.jpg?v=57d3aa6d94" loading="lazy" width="1486" height="915" alt="Captură de ecran: Adaugă o sursă în OBS"><span class="mk" style="left:0.34%;top:90.93%;width:2.15%;height:3.6%"><b>1</b></span></span></button></figure></div></section>
+<section class="g-step" id="browser"><div class="g-num" aria-hidden="true">3</div><div class="g-content"><p class="g-kicker">Pasul 3</p><h3>Alege „Browser”</h3><p>În fereastra de adăugare a sursei, alege <b>Browser</b>&nbsp;<span class="g-nb"><i>1</i></span> și creează o sursă nouă&nbsp;<span class="g-nb"><i>2</i>.</span></p><figure class="g-shot"><button class="g-zoom" type="button" title="Apasă pe imagine ca s-o mărești" aria-label="Apasă pe imagine ca s-o mărești"><span class="g-frame"><img src="../../assets/en/obs-2-add.jpg?v=7a14879f7b" loading="lazy" width="1318" height="784" alt="Captură de ecran: Alege „Browser”"><span class="mk" style="left:1.82%;top:21.82%;width:22.91%;height:5.11%"><b>1</b></span><span class="mk mk-l" style="left:28.0%;top:8.8%;width:69.04%;height:9.82%"><b>2</b></span></span></button></figure></div></section>
+<section class="g-step" id="paste"><div class="g-num" aria-hidden="true">4</div><div class="g-content"><p class="g-kicker">Pasul 4</p><h3>Lipește adresa și setează dimensiunea</h3><p><b>URL</b>&nbsp;<span class="g-nb"><i>1</i>:</span> golește câmpul și lipește adresa (Ctrl+V).<br><b>Lățime</b>&nbsp;<span class="g-nb"><i>2</i>:</span> <code>1920</code>, <b>Înălțime</b>&nbsp;<span class="g-nb"><i>3</i>:</span> <code>1080</code>.</p><p>Lasă restul cum este și apasă <b>OK</b>&nbsp;<span class="g-nb"><i>4</i>.</span></p><p class="g-note">Previzualizarea din partea de sus a ferestrei se actualizează abia după OK. Când redeschizi proprietățile, vei vedea acolo diapozitivul, ca în imagine.</p><figure class="g-shot narrow"><button class="g-zoom" type="button" title="Apasă pe imagine ca s-o mărești" aria-label="Apasă pe imagine ca s-o mărești"><span class="g-frame"><img src="../../assets/en/obs-3-props.jpg?v=807c5b879e" loading="lazy" width="946" height="975" alt="Captură de ecran: Lipește adresa și setează dimensiunea"><span class="mk" style="left:17.76%;top:52.21%;width:77.8%;height:4.1%"><b>1</b></span><span class="mk" style="left:17.76%;top:57.13%;width:77.8%;height:4.61%"><b>2</b></span><span class="mk" style="left:17.76%;top:62.46%;width:77.8%;height:4.61%"><b>3</b></span><span class="mk" style="left:80.66%;top:93.64%;width:6.98%;height:4.61%"><b>4</b></span></span></button></figure></div></section>
+<section class="g-step" id="done"><div class="g-num" aria-hidden="true">5</div><div class="g-content"><p class="g-kicker">Pasul 5</p><h3>Verifică rezultatul</h3><p>Diapozitivul curent apare acum în OBS și se schimbă odată cu proiectorul. OBS ține minte sursa: faci asta o singură dată.</p><p>Dacă diapozitivul nu umple imaginea, fă clic dreapta pe sursă și alege <b>Transformare → Potrivește pe ecran</b> (Ctrl+F).</p><figure class="g-shot"><button class="g-zoom" type="button" title="Apasă pe imagine ca s-o mărești" aria-label="Apasă pe imagine ca s-o mărești"><span class="g-frame"><img src="../../assets/en/obs-4-result.jpg?v=f3b8881fd8" loading="lazy" width="1486" height="915" alt="Captură de ecran: Verifică rezultatul"></span></button></figure><p class="g-tip"><b>Sfat.</b> Ca să se vadă camera când nu e nimic pe ecran, alege în Sermon <b>Setări → Ecran și afișare → Între servicii → Nimic</b>: OBS primește atunci o pagină transparentă. Ca să ascunzi diapozitivele doar în transmisie, apasă <b>Ascunde</b> lângă OBS în Sermon: proiectorul continuă să afișeze.</p></div></section>
+</section>
+<section class="g-part g-extra" id="extra"><h2>Conectează Sermon la OBS</h2><p class="g-part-lead">Recomandat când OBS rulează pe alt computer. După conectare, Sermon actualizează singur adresa din sursa Browser când routerul dă unui computer un IP nou și găsește OBS în rețea dacă s-a schimbat adresa lui OBS. Poate și să comute OBS pe o scenă aleasă când ceva apare pe ecran, și înapoi când îl ascunzi. Folosește serverul WebSocket inclus în OBS.</p>
+<section class="g-step" id="ws-open"><div class="g-num" aria-hidden="true">A</div><div class="g-content"><h3>Deschide setările WebSocket</h3><p>În OBS, deschide <b>Unelte</b>&nbsp;<span class="g-nb"><i>1</i></span> → <b>Setările serverului WebSocket</b>&nbsp;<span class="g-nb"><i>2</i>.</span></p><figure class="g-shot"><button class="g-zoom" type="button" title="Apasă pe imagine ca s-o mărești" aria-label="Apasă pe imagine ca s-o mărești"><span class="g-frame"><img src="../../assets/en/obs-5-tools.jpg?v=543935d4a7" loading="lazy" width="1486" height="915" alt="Captură de ecran: Deschide setările WebSocket"><span class="mk" style="left:28.67%;top:-0.11%;width:3.84%;height:3.5%"><b>1</b></span><span class="mk" style="left:28.94%;top:27.54%;width:16.35%;height:3.82%"><b>2</b></span></span></button></figure></div></section>
+<section class="g-step" id="ws-on"><div class="g-num" aria-hidden="true">B</div><div class="g-content"><h3>Pornește serverul</h3><p>Bifează <b>Activează serverul WebSocket</b>&nbsp;<span class="g-nb"><i>1</i>.</span> Scrie propria parolă la <b>Parola serverului</b>&nbsp;<span class="g-nb"><i>2</i></span> sau păstreaz-o pe cea generată. Apasă <b>OK</b>&nbsp;<span class="g-nb"><i>3</i>.</span></p><figure class="g-shot narrow"><button class="g-zoom" type="button" title="Apasă pe imagine ca s-o mărești" aria-label="Apasă pe imagine ca s-o mărești"><span class="g-frame"><img src="../../assets/en/obs-6-ws.jpg?v=72419a185e" loading="lazy" width="848" height="752" alt="Captură de ecran: Pornește serverul"><span class="mk" style="left:26.18%;top:7.19%;width:26.06%;height:3.59%"><b>1</b></span><span class="mk" style="left:26.18%;top:41.22%;width:47.29%;height:5.32%"><b>2</b></span><span class="mk" style="left:67.45%;top:91.89%;width:7.78%;height:5.99%"><b>3</b></span></span></button></figure></div></section>
+<section class="g-step" id="ws-info"><div class="g-num" aria-hidden="true">C</div><div class="g-content"><h3>Găsește adresa serverului și parola</h3><p>Deschide din nou <b>Unelte → Setările serverului WebSocket</b> și apasă <b>Arată informațiile de conectare</b>. Fereastra are tot ce îi trebuie lui Sermon: <b>IP-ul serverului</b>&nbsp;<span class="g-nb"><i>1</i>,</span> adică adresa computerului cu OBS, <b>portul serverului</b>&nbsp;<span class="g-nb"><i>2</i></span> și <b>parola serverului</b>&nbsp;<span class="g-nb"><i>3</i>.</span> Fiecare are un buton de copiere.</p><p class="g-note">Dacă OBS și Sermon rulează pe același computer, Sermon poate păstra adresa <code>localhost</code>. IP-ul serverului e necesar când OBS e pe alt computer.</p><figure class="g-shot narrow"><button class="g-zoom" type="button" title="Apasă pe imagine ca s-o mărești" aria-label="Apasă pe imagine ca s-o mărești"><span class="g-frame"><img src="../../assets/en/obs-7-connect.jpg?v=c1bcef55be" loading="lazy" width="568" height="517" alt="Captură de ecran: Găsește adresa serverului și parola"><span class="mk" style="left:32.92%;top:2.9%;width:48.77%;height:7.74%"><b>1</b></span><span class="mk" style="left:32.92%;top:13.15%;width:48.77%;height:7.74%"><b>2</b></span><span class="mk" style="left:32.92%;top:23.21%;width:48.77%;height:7.74%"><b>3</b></span></span></button></figure></div></section>
+<section class="g-step" id="ws-sermon"><div class="g-num" aria-hidden="true">D</div><div class="g-content"><h3>Conectează Sermon</h3><p>În Sermon, deschide <b>Setări → OBS și transmisie</b> și pornește <b>Activează integrarea OBS</b>&nbsp;<span class="g-nb"><i>1</i>.</span></p><p><b>Adresa serverului</b>&nbsp;<span class="g-nb"><i>2</i>:</span> lipește IP-ul serverului de la pasul anterior sau lasă <code>localhost</code> dacă OBS e pe acest computer. <b>Port</b>: <code>4455</code>. <b>Parolă</b>&nbsp;<span class="g-nb"><i>3</i>:</span> lipește parola serverului.</p><p>Apasă <b>Testează conexiunea</b>&nbsp;<span class="g-nb"><i>4</i>:</span> ar trebui să apară <b>Conectat</b>. Ca să schimbi scenele, alege una la <b>Scena prezentării</b>. Apasă <b>Salvează</b>.</p><figure class="g-shot"><button class="g-zoom" type="button" title="Apasă pe imagine ca s-o mărești" aria-label="Apasă pe imagine ca s-o mărești"><span class="g-frame"><img src="../../assets/en/obs-sermon-settings.jpg?v=39844e72b7" loading="lazy" width="1311" height="815" alt="Captură de ecran: Conectează Sermon"><span class="mk" style="left:84.29%;top:17.67%;width:4.88%;height:4.66%"><b>1</b></span><span class="mk mk-l" style="left:1.6%;top:26.63%;width:95.8%;height:6.63%"><b>2</b></span><span class="mk mk-l" style="left:1.6%;top:48.96%;width:95.8%;height:6.75%"><b>3</b></span><span class="mk" style="left:1.6%;top:56.2%;width:31.66%;height:6.38%"><b>4</b></span></span></button></figure></div></section>
+</section>
+<section class="g-part" id="faq"><h2>Dacă ceva nu merge</h2><details class="g-faq"><summary>OBS arată o imagine goală sau albă<svg class="ic ic-16"><use href="#i-chevron-down"/></svg></summary><div class="g-faq-body"><ul><li>Verifică dacă Sermon e deschis și dacă lângă <b>OBS</b>, în panoul din dreapta, scrie <b>Rulează</b>.</li><li>Copiază din nou adresa cu butonul <b>Adresă</b> și lipește-o în câmpul <b>URL</b> al sursei.</li><li>Apasă <b>Reîmprospătează</b> sub previzualizarea OBS.</li></ul></div></details>
+<details class="g-faq"><summary>OBS rulează pe alt computer<svg class="ic ic-16"><use href="#i-chevron-down"/></svg></summary><div class="g-faq-body"><ul><li>Ambele computere trebuie să fie în aceeași rețea (același router sau același Wi-Fi).</li><li>La prima pornire a Sermon, Windows poate întreba dacă îi permite să folosească rețeaua. Apasă <b>Permite</b>. Dacă ai închis fereastra, permite Sermon în setările Paravanului de protecție Windows.</li><li>Când routerul dă unui computer un IP nou, Sermon <a href="#ws-open">conectat la OBS</a> corectează singur adresa în OBS în mai puțin de un minut. Fără conexiune, copiază din nou adresa în Sermon și lipește-o în sursă.</li><li>Pentru o adresă care nu se schimbă niciodată, rezervă un IP fix pentru computerul cu Sermon în setările routerului (deseori numit <b>rezervare DHCP</b>).</li></ul></div></details>
+<details class="g-faq"><summary>Adresa nu mai funcționează<svg class="ic ic-16"><use href="#i-chevron-down"/></svg></summary><div class="g-faq-body"><ul><li>Routerul a dat computerului un IP nou. <a href="#ws-open">Conectează Sermon la OBS</a> și de atunci Sermon corectează singur adresa. Până atunci, copiază din nou adresa.</li><li>Dacă adresa se termină cu <code>:8091</code> sau mai mult, portul 8090 era ocupat, de exemplu de o a doua copie Sermon deschisă. Închide toate copiile și pornește din nou Sermon.</li></ul></div></details>
+<details class="g-faq"><summary>Diapozitivul e mic sau tăiat<svg class="ic ic-16"><use href="#i-chevron-down"/></svg></summary><div class="g-faq-body"><p>În proprietățile sursei setează <b>Lățime</b> 1920 și <b>Înălțime</b> 1080. Apoi clic dreapta pe sursă → <b>Transformare → Potrivește pe ecran</b>.</p></div></details>
+<details class="g-faq"><summary>Sermon nu se conectează la OBS<svg class="ic ic-16"><use href="#i-chevron-down"/></svg></summary><div class="g-faq-body"><ul><li>Verifică dacă în OBS e bifat <b>Activează serverul WebSocket</b> și dacă parola din Sermon e exact aceeași.</li><li>Portul trebuie să fie <code>4455</code> în ambele programe.</li><li>Dacă OBS e pe alt computer, <b>adresa serverului</b> trebuie să fie IP-ul serverului din informațiile de conectare, nu <code>localhost</code>. Permite OBS în paravanul de protecție al acelui computer.</li></ul></div></details></section>
+    </article>
+  </div>
+
+  <section class="g-cta">
+    <div class="g-cta-inner">
+      <img src="../../assets/favicon.png" alt="" width="56" height="56">
+      <div>
+        <h2>Nu ai încă Sermon?</h2>
+        <p>Gratuit, funcționează fără internet, fără înregistrare.</p>
+      </div>
+      <div class="g-cta-buttons">
+        <a class="btn btn-gold btn-lg" data-download="windows" href="https://github.com/AndreyYushchenko/Sermon-Releases/releases">
+          <span class="win-logo" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          <span class="dl-label" data-mac="Descarcă pentru Mac">Descarcă pentru Windows</span>
+          <svg class="ic"><use href="#i-download"/></svg>
+        </a>
+        <a class="g-cta-link" href="../../ro/">Despre Sermon <svg class="ic ic-16"><use href="#i-arrow-right"/></svg></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <a class="logo logo-sm" href="../../ro/"><img class="logo-icon" src="../../assets/favicon.png" alt="" width="36" height="36"><span>Sermon</span></a>
+  <nav class="footer-links" aria-label="Footer">
+    <a href="../../ro/#features">Funcții</a>
+    <a href="../../ro/#screenshots">Capturi</a>
+    <a href="../../ro/library/">Bibliotecă</a>
+    <a href="#top">OBS</a>
+    <a data-support href="mailto:sermon.support@gmail.com?subject=Sermon">Asistență</a>
+    <a href="../../ro/#platforms">Descarcă</a>
+    <a href="../../ro/privacy/">Confidențialitate</a>
+  </nav>
+  <div class="social">
+    <a data-support href="mailto:sermon.support@gmail.com?subject=Sermon" aria-label="Email"><svg class="ic"><use href="#i-mail"/></svg></a>
+    <a href="https://github.com/AndreyYushchenko/Sermon-Releases/releases" aria-label="Toate versiunile"><svg class="ic"><use href="#i-globe"/></svg></a>
+  </div>
+</footer>
+
+<dialog class="modal" tabindex="-1" id="support-dialog" aria-labelledby="support-title">
+  <button class="modal-close" data-close aria-label="Închide"><svg class="ic"><use href="#i-x"/></svg></button>
+  <div class="modal-icon"><svg class="ic"><use href="#i-mail"/></svg></div>
+  <h2 id="support-title">Contactează suportul</h2>
+  <p>O întrebare, o idee sau ceva nu merge? Scrie-ne, citim fiecare mesaj și răspundem.</p>
+  <div class="email-row">
+    <span class="email" aria-live="polite">sermon.support@gmail.com</span>
+    <button class="btn btn-outline btn-copy" data-copied="Copiat" aria-label="Copiază adresa" title="Copiază adresa"><svg class="ic ic-16"><use href="#i-copy"/></svg></button>
+  </div>
+  <div class="modal-actions">
+    <a class="btn btn-blue" target="_blank" rel="noopener" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=sermon.support@gmail.com&amp;su=Sermon">Scrie în Gmail <svg class="ic ic-16"><use href="#i-external"/></svg></a>
+    <a class="btn btn-outline" href="mailto:sermon.support@gmail.com?subject=Sermon">Deschide aplicația de e-mail</a>
+  </div>
+</dialog>
+
+<dialog class="modal" tabindex="-1" id="download-dialog" aria-labelledby="download-title">
+  <button class="modal-close" data-close aria-label="Închide"><svg class="ic"><use href="#i-x"/></svg></button>
+  <div class="modal-icon modal-icon-download"><svg class="ic"><use href="#i-download"/></svg></div>
+  <h2 id="download-title">Descărcarea a început</h2>
+  <p>Programul de instalare se salvează în descărcările browserului. Deschide-l după ce se termină.</p>
+  <p class="modal-hint" data-os="windows">Windows poate avertiza că aplicația nu este recunoscută: apasă „Mai multe informații”, apoi „Rulează oricum”.</p>
+  <p class="modal-hint" data-os="mac">Dacă macOS nu deschide aplicația, fă clic dreapta pe Sermon în „Aplicații” și alege „Deschide”.</p>
+  <div class="modal-actions">
+    <a class="btn btn-outline dl-again" href="https://github.com/AndreyYushchenko/Sermon-Releases/releases">Nu a început? Descarcă din nou</a>
+    <a class="modal-link" target="_blank" rel="noopener" href="https://github.com/AndreyYushchenko/Sermon-Releases/releases">Toate versiunile <svg class="ic ic-14"><use href="#i-external"/></svg></a>
+  </div>
+</dialog>
+
+<dialog class="modal" tabindex="-1" id="mobile-dialog" aria-labelledby="mobile-title">
+  <button class="modal-close" data-close aria-label="Închide"><svg class="ic"><use href="#i-x"/></svg></button>
+  <div class="modal-icon"><svg class="ic"><use href="#i-monitor"/></svg></div>
+  <h2 id="mobile-title">Deschide această pagină pe un computer</h2>
+  <p>Sermon funcționează pe Windows și macOS. Deschide această pagină pe computer pentru a-l descărca. Aplicația pentru iOS vine în curând.</p>
+  <div class="modal-actions"><button class="btn btn-blue" data-close>Închide</button></div>
+</dialog>
+
+<dialog class="g-lightbox" aria-label="Apasă pe imagine ca s-o mărești">
+  <button class="modal-close" data-close aria-label="Închide"><svg class="ic"><use href="#i-x"/></svg></button>
+  <div class="g-lightbox-body"></div>
+</dialog>
+
+<script src="../../app.js?v=220dfdb95f"></script>
+</body>
+</html>

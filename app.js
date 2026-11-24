@@ -2,7 +2,7 @@
 // point at the newest release's files on GitHub (betas included).
 (() => {
   // ---- Language ----
-  const LANGS = ['en', 'uk', 'ru', 'de', 'pl', 'ro', 'es', 'ko', 'pt'];
+  const LANGS = ['en', 'uk', 'ru', 'de', 'pl', 'ro', 'es', 'ko', 'pt', 'fr'];
   const lang = document.body.dataset.lang;
   const base = document.body.dataset.base;
   // A sub-page (the OBS guide) exists in fewer languages and lives in <lang>/<page>/.
@@ -214,6 +214,17 @@
       const logo = a.querySelector('.win-logo');
       if (logo) logo.outerHTML = apple;
     });
+    // The platform cards too: macOS first with the filled button, Windows after it.
+    const cards = document.querySelector('.platform-cards');
+    if (cards) {
+      const macButton = cards.querySelector('[data-download="mac"]');
+      const winButton = cards.querySelector('[data-download="windows"]');
+      if (macButton && winButton) {
+        macButton.classList.replace('btn-outline', 'btn-blue');
+        winButton.classList.replace('btn-blue', 'btn-outline');
+        cards.insertBefore(macButton.closest('.platform'), cards.firstElementChild);
+      }
+    }
   }
   document.querySelectorAll('[data-download]').forEach((a) => a.addEventListener('click', (e) => {
     if (phone) {

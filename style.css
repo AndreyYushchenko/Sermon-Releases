@@ -1138,3 +1138,30 @@ button { font: inherit; color: inherit; }
   .lib-howto-heading { font-size: 24px; margin-bottom: 24px; }
 }
 
+
+
+/* "Поддержать": a warm card before the last call to download. */
+.donate { padding: 72px 24px 24px; }
+.donate-card {
+  max-width: 1120px; margin: 0 auto; display: grid; grid-template-columns: auto 1fr auto; gap: 28px; align-items: center;
+  padding: 36px 40px; border-radius: 28px;
+  background: linear-gradient(135deg, rgba(245, 158, 11, .14), rgba(249, 115, 22, .06) 55%, rgba(255, 255, 255, .02));
+  border: 1px solid rgba(245, 158, 11, .28);
+}
+.donate-icon {
+  width: 64px; height: 64px; border-radius: 20px; display: grid; place-items: center;
+  background: linear-gradient(135deg, #f59e0b, #f97316); color: #fff; box-shadow: 0 12px 30px rgba(249, 115, 22, .35);
+}
+.donate-icon .ic { width: 30px; height: 30px; }
+.donate-text .eyebrow { margin-bottom: 8px; }
+.donate-text h2 { margin: 0 0 10px; }
+.donate-text .lead { margin: 0; max-width: 620px; }
+.donate-action { display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; }
+.donate-action .btn { white-space: nowrap; }
+.donate-action .note { margin: 0; font-size: 13px; opacity: .75; }
+.nav-donate { display: inline-flex; align-items: center; gap: 6px; color: #f59e0b !important; }
+.nav-donate .ic { width: 14px; height: 14px; }
+@media (max-width: 900px) {
+  .donate-card { grid-template-columns: 1fr; text-align: center; justify-items: center; padding: 28px 22px; }
+  .donate-text .lead { margin: 0 auto; }
+}
