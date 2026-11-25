@@ -14,14 +14,7 @@
     get: () => { try { return localStorage.getItem('sermon-lang'); } catch (e) { return null; } },
     set: (v) => { try { localStorage.setItem('sermon-lang', v); } catch (e) { /* private mode */ } },
   };
-  if (lang === 'en' && !store.get()) {
-    const wanted = (navigator.languages || [navigator.language || 'en']).map((l) => l.toLowerCase().split('-')[0]).find((l) => LANGS.includes(l));
-    if (wanted && wanted !== 'en') {
-      store.set(wanted);
-      location.replace(base + wanted + '/' + (page ? page + '/' : '') + location.hash);
-      return;
-    }
-  }
+  // The first visit's language is chosen in the page's <head> (build.py), before it is drawn.
   const langBox = document.querySelector('.lang');
   if (langBox) {
     const button = langBox.querySelector('.lang-btn');
@@ -80,6 +73,10 @@
     }));
   }
 
+  // ---- "What's new": the version pill opens the short list. ----
+  const news = document.getElementById('news-dialog');
+  document.querySelectorAll('[data-news]').forEach((b) => b.addEventListener('click', () => showDialog(news)));
+
   // ---- The address in the "write to us" letter: one click copies it. ----
   document.querySelectorAll('[data-copy]').forEach((b) => b.addEventListener('click', () => {
     const text = b.dataset.copy;
@@ -134,6 +131,16 @@
       other.querySelector('use').setAttribute('href', '#i-windows');
       other.querySelector('span').textContent = 'Windows';
     }
+    // The closing card on the inner pages (library, privacy, the guide): plain, and Apple's on an iPhone/iPad.
+    document.querySelectorAll('.g-cta [data-download]').forEach((a) => {
+      a.classList.replace('btn-gold', 'btn-outline');
+      if (!apple) return;
+      a.dataset.download = 'mac';
+      const label = a.querySelector('.dl-label');
+      if (label && label.dataset.mac) label.textContent = label.dataset.mac;
+      const logo = a.querySelector('.win-logo');
+      if (logo) logo.outerHTML = '<svg class="ic" style="width:18px;height:18px"><use href="#i-apple"/></svg>';
+    });
     const grid = document.querySelector('.dl');
     if (grid) {
       const order = apple ? ['ios', 'mac', 'windows'] : ['windows', 'mac', 'ios'];
@@ -240,6 +247,19 @@
     };
     addEventListener('scroll', follow, { passive: true });
     follow();
+  }
+
+  // ---- "New version" card: once per version, until the visitor closes it or opens what's new. ----
+  const nw = document.querySelector('.nw');
+  if (nw) {
+    let seen = null;
+    try { seen = localStorage.getItem('sermon-news-seen'); } catch (e) { /* private mode */ }
+    const done = () => { try { localStorage.setItem('sermon-news-seen', nw.dataset.ver); } catch (e) { /* private mode */ } };
+    if (seen !== nw.dataset.ver) {
+      setTimeout(() => { nw.hidden = false; void nw.offsetWidth; nw.classList.add('show'); }, 1800);
+      nw.querySelector('.nw-x').addEventListener('click', () => { done(); nw.classList.remove('show'); setTimeout(() => { nw.hidden = true; }, 450); });
+      nw.querySelector('.nw-go').addEventListener('click', done);
+    }
   }
 
   // ---- Gentle appear on scroll. ----
