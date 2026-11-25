@@ -2,7 +2,7 @@
 
 **Sermon** — программа для церковного служения на Windows и macOS. Она выводит на проектор и в трансляцию слова песен, стихи из Библии, объявления, фото, видео и таймеры. Всё управляется из одного окна: оператор видит, что сейчас на экране и что будет дальше, и переключает слайды одной клавишей.
 
-Подходит для воскресного служения, молодёжных встреч, конференций, лагерей и онлайн-трансляций. Интерфейс на украинском, русском, английском и ещё шести языках.
+Подходит для воскресного служения, молодёжных встреч, конференций, лагерей и онлайн-трансляций. Интерфейс на украинском, русском, английском и ещё семи языках.
 
 ## ⬇️ Скачать Sermon бесплатно
 
@@ -19,7 +19,7 @@
 
 **Песни и прославление**
 - Слова песен на проекторе: куплеты, припевы и бридж разбиваются на слайды автоматически
-- Сборники песен: импорт из файлов .sps и .spb, ChordPro (.cho) и обычного текста (.txt)
+- Сборники песен: импорт из файлов .sps и .spb, ChordPro (.cho), обычного текста (.txt), а также из OpenLyrics, OpenSong, ProPresenter, SongSelect и SongBeamer
 - Аккорды над словами, номера куплетов, автоматический повтор припева
 - Поиск песни по названию, словам или номеру в сборнике
 
@@ -68,7 +68,7 @@ Sermon — простая бесплатная программа, котора�
 
 ## Ошибки и предложения
 
-Это бета-версия. Если что-то не работает или не хватает какой-то функции, напишите в **[Issues](https://github.com/AndreyYushchenko/Sermon-Releases/issues)**.
+Это бета-версия. Если что-то не работает или не хватает какой-то функции, напишите нам в **[Telegram](https://t.me/sermn_bot)** или в **[Issues](https://github.com/AndreyYushchenko/Sermon-Releases/issues)**.
 
 ---
 
@@ -78,13 +78,15 @@ Sermon — простая бесплатная программа, котора�
 
 **[⬇️ Завантажити Sermon безкоштовно →](https://github.com/AndreyYushchenko/Sermon-Releases/releases/latest)** — у розділі *Assets*: `Sermon-Setup-….exe` для Windows, `Sermon-….dmg` для macOS.
 
-- Слова пісень на проєкторі, збірники пісень (.sps, .spb, ChordPro, .txt), акорди, приспіви
+- Слова пісень на проєкторі, збірники пісень (.sps, .spb, ChordPro, .txt, OpenLyrics, OpenSong, ProPresenter, SongSelect, SongBeamer), акорди, приспіви
 - Біблія на екрані: вибір книги, розділу й віршів, пошук за текстом, кілька перекладів
 - Оголошення, фото, відео й відеофони
 - Плейлисти служіння, керування клавішами або презентером
 - Таймери: годинник, зворотний відлік до початку служіння, секундомір, повідомлення
 - Вивід у OBS Studio (Browser Source) і перемикання сцен через obs-websocket
 - Резервні копії, світла й темна тема, інтерфейс українською
+
+Питання та помилки: пишіть у **[Telegram](https://t.me/sermn_bot)**.
 
 Якщо Windows попередить про захист комп'ютера, натисніть **Докладніше → Виконати в будь-якому разі**. На Mac під час першого запуску відкрийте **Системні параметри → Конфіденційність і безпека → Усе одно відкрити**.
 
@@ -94,12 +96,14 @@ Sermon — простая бесплатная программа, котора�
 
 **[⬇️ Download Sermon for free →](https://github.com/AndreyYushchenko/Sermon-Releases/releases/latest)** — under *Assets*: `Sermon-Setup-….exe` for Windows 10/11, `Sermon-….dmg` for macOS (experimental).
 
-- Song lyrics on the projector, songbooks (.sps, .spb, ChordPro, .txt), chords, choruses
+- Song lyrics on the projector, songbooks (.sps, .spb, ChordPro, .txt, OpenLyrics, OpenSong, ProPresenter, SongSelect, SongBeamer), chords, choruses
 - Bible verses on screen: pick book, chapter and verses or search the text; multiple translations
 - Announcements, photos, videos and looping video backgrounds
 - Service playlists, controlled by keyboard or presentation clicker
 - Timers: clock, countdown to service start, stopwatch, messages, scheduled start
 - OBS Studio output (Browser Source) and scene switching via obs-websocket
-- Backups, light and dark theme; interface in English, Ukrainian, Russian, German, Polish, Romanian, Spanish, Korean and Portuguese
+- Backups, light and dark theme; interface in English, Ukrainian, Russian, German, Polish, Romanian, Spanish, Korean, Portuguese and French
+
+Questions or bugs: write to us in **[Telegram](https://t.me/sermn_bot)**.
 
 On Windows, if SmartScreen warns, click **More info → Run anyway** — the installer is not code-signed yet. On a Mac, open the app once via **System Settings → Privacy & Security → Open Anyway**.
