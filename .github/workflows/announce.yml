@@ -1,0 +1,22 @@
+# When a new Sermon version is published here, the Telegram bot (@sermn_bot)
+# sends it to every subscriber right away. The bot only ever sends the newest
+# release, and each version only once, so a repeated call does nothing.
+name: Announce in Telegram
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+jobs:
+  announce:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Tell the bot
+        run: |
+          sleep 30 # let GitHub finish attaching the files
+          for i in 1 2 3 4 5; do
+            out=$(curl -fsS -m 90 "https://sermon-murex.vercel.app/api/telegram?notify") && { echo "$out"; exit 0; }
+            sleep 30
+          done
+          exit 1
