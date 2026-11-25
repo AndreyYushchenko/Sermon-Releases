@@ -22,7 +22,7 @@
 <meta name="twitter:description" content="Show songs, Bible verses, announcements, photos, videos and timers on screens and livestreams. Free, works offline.">
 <meta name="twitter:image" content="https://andreyyushchenko.github.io/Sermon-Releases/assets/og.jpg">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Sermon", "url": "https://andreyyushchenko.github.io/Sermon-Releases/", "description": "Sermon is free software for church services: songs, Bible verses, announcements, photos, videos, playlists and timers on the projector, TVs and your OBS livestream. Windows and macOS, works offline.", "inLanguage": "en", "applicationCategory": "MultimediaApplication", "operatingSystem": "Windows 10, Windows 11, macOS 11+", "image": "https://andreyyushchenko.github.io/Sermon-Releases/assets/og.jpg", "downloadUrl": "https://github.com/AndreyYushchenko/Sermon-Releases/releases", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
-<script>(function(){try{var L=["en", "uk", "ru", "de", "pl", "ro", "es", "ko", "pt", "fr"],s=null;try{s=localStorage.getItem("sermon-lang")}catch(e){}var w=s;if(!w){var n=navigator.languages||[navigator.language||"en"];for(var i=0;i<n.length;i++){var c=String(n[i]).toLowerCase().split("-")[0];if(L.indexOf(c)>=0){w=c;break}}}if(w&&w!=="en"&&L.indexOf(w)>=0)location.replace(""+w+"/"+location.hash)}catch(e){}})();</script>
+<script>(function(){try{var L=["en", "uk", "ru", "de", "pl", "ro", "es", "ko", "pt", "fr"],s=null;try{localStorage.removeItem("sermon-lang");s=localStorage.getItem("sermon-site-lang")}catch(e){}var w=s;if(!w){var n=navigator.languages||[navigator.language||"en"];for(var i=0;i<n.length;i++){var c=String(n[i]).toLowerCase().split("-")[0];if(L.indexOf(c)>=0){w=c;break}}}if(w&&w!=="en"&&L.indexOf(w)>=0)location.replace(""+w+"/"+location.hash)}catch(e){}})();</script>
 <script>try{var t=localStorage.getItem('sermon-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -316,6 +316,6 @@
   <p>Sermon runs on Windows and macOS. Open this page on your computer to download it. The iOS app is coming soon.</p>
   <div class="modal-actions"><button class="btn btn-blue" data-close>Close</button></div>
 </dialog>
-<script src="site.js?v=764c5348cb"></script>
+<script src="site.js?v=3d0a59d316"></script>
 </body>
 </html>

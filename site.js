@@ -11,8 +11,8 @@
   const base = body.dataset.base || '';
   const page = body.dataset.page || '';
   const store = {
-    get: () => { try { return localStorage.getItem('sermon-lang'); } catch (e) { return null; } },
-    set: (v) => { try { localStorage.setItem('sermon-lang', v); } catch (e) { /* private mode */ } },
+    get: () => { try { return localStorage.getItem('sermon-site-lang'); } catch (e) { return null; } },
+    set: (v) => { try { localStorage.setItem('sermon-site-lang', v); localStorage.removeItem('sermon-lang'); } catch (e) { /* private mode */ } },
   };
   // The first visit's language is chosen in the page's <head> (build.py), before it is drawn.
   const langBox = document.querySelector('.lang');
