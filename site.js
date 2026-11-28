@@ -26,6 +26,110 @@
     });
   }
 
+  // ---- "Новинка" banners: one after another by themselves, each played
+  // from its start; waits under the mouse; a swipe or a bar picks one. ----
+  document.querySelectorAll('.nf-carousel').forEach((box) => {
+    const track = box.querySelector('.nf-track');
+    const slides = [...track.children];
+    // Round and round, always forward: past the last banner comes a copy of
+    // the first; once there, the strip jumps back to the real one unseen.
+    const loop = slides[0].cloneNode(true);
+    loop.setAttribute('aria-hidden', 'true');
+    loop.classList.remove('is-active');
+    track.appendChild(loop);
+    const dots = [...box.querySelectorAll('.nf-dots button')];
+    let current = 0;
+    let timer = null;
+    let left = 0;
+    let started = 0;
+    const typing = [];
+    const at = () => Math.round(track.scrollLeft / Math.max(1, track.clientWidth));
+    // The Bible banner: the place typed in, found, its verses picked, on screen.
+    const playBible = (mock) => {
+      typing.forEach(clearTimeout);
+      typing.length = 0;
+      mock.classList.remove('found', 'picked', 'onscreen');
+      const q = mock.querySelector('.bm-q');
+      const text = q.dataset.text;
+      q.textContent = '';
+      [...text].forEach((ch, i) => typing.push(setTimeout(() => { q.textContent += ch; }, 500 + i * 130)));
+      const typed = 500 + text.length * 130;
+      typing.push(setTimeout(() => mock.classList.add('found'), typed + 250));
+      typing.push(setTimeout(() => mock.classList.add('picked'), typed + 900));
+      typing.push(setTimeout(() => mock.classList.add('onscreen'), typed + 2000));
+    };
+    // The strip as tall as the banner shown, so a short one leaves no gap.
+    const fit = () => { track.style.height = slides[current].offsetHeight + 'px'; };
+    addEventListener('resize', fit, { passive: true });
+    addEventListener('load', fit);
+    requestAnimationFrame(fit);
+    const show = (i, scroll) => {
+      if (i === slides.length && scroll) {
+        // Onto the copy of the first, then quietly back to the real one.
+        loop.classList.add('is-active');
+        track.style.height = loop.offsetHeight + 'px';
+        slides[current].classList.remove('is-active');
+        track.scrollTo({ left: slides.length * track.clientWidth, behavior: 'smooth' });
+        setTimeout(() => {
+          track.scrollTo({ left: 0, behavior: 'instant' });
+          loop.classList.remove('is-active');
+          show(0, false);
+        }, 700);
+        return;
+      }
+      current = (i + slides.length) % slides.length;
+      slides.forEach((s, k) => s.classList.toggle('is-active', k === current));
+      fit();
+      const ms = Number(slides[current].dataset.ms) || 10000;
+      box.style.setProperty('--nf-ms', ms + 'ms');
+      dots.forEach((d, k) => { d.classList.remove('on'); void d.offsetWidth; d.classList.toggle('on', k === current); });
+      const mock = slides[current].querySelector('.bible-mock');
+      if (mock && !still) playBible(mock);
+      if (scroll) track.scrollTo({ left: current * track.clientWidth, behavior: 'smooth' });
+      clearTimeout(timer);
+      left = ms;
+      started = Date.now();
+      if (!still && slides.length > 1 && !box.classList.contains('paused')) timer = setTimeout(() => show(current + 1, true), left);
+    };
+    box.addEventListener('mouseenter', () => {
+      box.classList.add('paused');
+      clearTimeout(timer);
+      left -= Date.now() - started;
+    });
+    box.addEventListener('mouseleave', () => {
+      box.classList.remove('paused');
+      started = Date.now();
+      if (!still && slides.length > 1) timer = setTimeout(() => show(current + 1, true), Math.max(400, left));
+    });
+    dots.forEach((d, i) => d.addEventListener('click', () => show(i, true)));
+    // A swipe: the slide it lands on starts over.
+    let settle = null;
+    track.addEventListener('scroll', () => {
+      clearTimeout(settle);
+      settle = setTimeout(() => {
+        const landed = at();
+        if (landed >= slides.length) { track.scrollTo({ left: 0, behavior: 'instant' }); show(0, false); }
+        else if (landed !== current) show(landed, false);
+      }, 120);
+    }, { passive: true });
+    if (still) {
+      const mock = box.querySelector('.bible-mock');
+      if (mock) mock.classList.add('found', 'picked', 'onscreen');
+    }
+    // Played from the first slide once it comes into view; waits while out of it.
+    let seen = false;
+    new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting && !seen) {
+        seen = true;
+        show(0, false);
+      } else if (entry.isIntersecting) {
+        box.dispatchEvent(new Event('mouseleave'));
+      } else if (seen) {
+        box.dispatchEvent(new Event('mouseenter'));
+      }
+    }, { threshold: 0.4 }).observe(box);
+  });
+
   // ---- Nav: a border once the page scrolls; the menu on phones. ----
   const nav = document.querySelector('.nav');
   const onScroll = () => nav.classList.toggle('scrolled', scrollY > 8);

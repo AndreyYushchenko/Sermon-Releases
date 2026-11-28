@@ -1,74 +1,74 @@
 ##spDataVersion:	1
 ##Title:	Polish Biblia Gdanska (1881)
 ##Abbreviation:	
-##Information:	Imported from The SWORD Poject file from http://www.crosswire.org/sword/modules/ModDisp.jsp?modType=Bibles@%--------------------------@%Bible Copyright and Permissions Information @%@%The Holy Bible@%Copyright (c) Eternity, God@%All rights reserved.@%Copyright Options@%@%Option A: If you think the bible is:@%    1. the work of men, translators, publishers and nothing to do with Holy Spirit OR@%    2. acknowledge Holy Spirit being the original author but the original author is dead and 70+ years had passed.@%    - Then you must abide by what the translators, publishers etc say about their work.@%@%Option B: If you think the bible is:@%    1.the work of Holy Spirit through His people OR@%    2.acknowledge Holy Spirit being the original author and He is still living OR@%    3.acknowledge that you have Holy Spirit within you.@%    - Then you must abide by what the Holy Spirit within you says as He is the original author and copyright holder of all Bibles.@%@%SoftProjector assumes that you agree with Option B.
-##RightToLeft:	0
-1	Genesis	50
-2	Exodus	40
-3	Leviticus	27
-4	Numbers	36
-5	Deuteronomy	34
-6	Joshua	24
-7	Judges	21
-8	Ruth	4
-9	1 Samuel	31
-10	2 Samuel	24
-11	1 Kings	22
-12	2 Kings	25
-13	1 Chronicles	29
-14	2 Chronicles	36
-15	Ezra	10
-16	Nehemiah	13
-17	Esther	10
-18	Job	42
-19	Psalm	150
-20	Proverbs	31
-21	Ecclesiastes	12
-22	Song of Solomon	8
-23	Isaiah	66
-24	Jeremiah	52
-25	Lamentations	5
-26	Ezekiel	48
-27	Daniel	12
-28	Hosea	14
-29	Joel	3
-30	Amos	9
-31	Obadiah	1
-32	Jonah	4
-33	Micah	7
-34	Nahum	3
-35	Habakkuk	3
-36	Zephaniah	3
-37	Haggai	2
-38	Zechariah	14
-39	Malachi	4
-40	Matthew	28
-41	Mark	16
-42	Luke	24
-43	John	21
-44	Acts	28
-45	Romans	16
-46	1 Corinthians	16
-47	2 Corinthians	13
-48	Galatians	6
-49	Ephesians	6
-50	Philippians	4
-51	Colossians	4
-52	1 Thessalonians	5
-53	2 Thessalonians	3
-54	1 Timothy	6
-55	2 Timothy	4
-56	Titus	3
-57	Philemon	1
-58	Hebrews	13
-59	James	5
-60	1 Peter	5
-61	2 Peter	3
-62	1 John	5
-63	2 John	1
-64	3 John	1
-65	Jude	1
-66	Revelation	22
+##Information:	
+##RightToLeft:	
+1	Rodzaju	50
+2	Wyjścia	40
+3	Kapłańska	27
+4	Liczb	36
+5	Powtórzonego Prawa	34
+6	Jozuego	24
+7	Sędziów	21
+8	Rut	4
+9	1 Samuela	31
+10	2 Samuela	24
+11	1 Królewska	22
+12	2 Królewska	25
+13	1 Kronik	29
+14	2 Kronik	36
+15	Ezdrasza	10
+16	Nehemiasza	13
+17	Estery	10
+18	Hioba	42
+19	Psalmy	150
+20	Przypowieści	31
+21	Kaznodziei	12
+22	Pieśń nad Pieśniami	8
+23	Izajasza	66
+24	Jeremiasza	52
+25	Treny	5
+26	Ezechiela	48
+27	Daniela	12
+28	Ozeasza	14
+29	Joela	3
+30	Amosa	9
+31	Abdiasza	1
+32	Jonasza	4
+33	Micheasza	7
+34	Nahuma	3
+35	Habakuka	3
+36	Sofoniasza	3
+37	Aggeusza	2
+38	Zachariasza	14
+39	Malachiasza	4
+40	Mateusza	28
+41	Marka	16
+42	Łukasza	24
+43	Jana	21
+44	Dzieje Apostolskie	28
+45	Rzymian	16
+46	1 Koryntian	16
+47	2 Koryntian	13
+48	Galacjan	6
+49	Efezjan	6
+50	Filipian	4
+51	Kolosan	4
+52	1 Tesaloniczan	5
+53	2 Tesaloniczan	3
+54	1 Tymoteusza	6
+55	2 Tymoteusza	4
+56	Tytusa	3
+57	Filemona	1
+58	Hebrajczyków	13
+59	Jakuba	5
+60	1 Piotra	5
+61	2 Piotra	3
+62	1 Jana	5
+63	2 Jana	1
+64	3 Jana	1
+65	Judy	1
+66	Objawienie	22
 -----
 B001C001V001	1	1	1	Na początku stworzył Bóg niebo i ziemię.
 B001C001V002	1	1	2	A ziemia była niekształtowna i próżna, i ciemność była nad przepaścią, a Duch Boży unaszał się nad wodami.

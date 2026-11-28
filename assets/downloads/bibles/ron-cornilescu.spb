@@ -1,33 +1,33 @@
 ##spDataVersion:	1
 ##Title:	Romanian: Cornilescu
 ##Abbreviation:	
-##Information:	This bible version for SoftProjector has been imported from http://www.unboundbible.org/@%_______________________________________
-##RightToLeft:	0
+##Information:	
+##RightToLeft:	
 1	Geneza	50
-2	Exod	40
-3	Levitic	27
+2	Exodul	40
+3	Leviticul	27
 4	Numeri	36
-5	Deuteronom	34
+5	Deuteronomul	34
 6	Iosua	24
-7	Judecãtori	21
+7	Judecători	21
 8	Rut	4
 9	1 Samuel	31
 10	2 Samuel	24
-11	1 Regi	22
-12	2 Regi	25
+11	1 Împărați	22
+12	2 Împărați	25
 13	1 Cronici	29
 14	2 Cronici	36
 15	Ezra	10
 16	Neemia	13
 17	Estera	10
 18	Iov	42
-19	Psalmi	150
+19	Psalmii	150
 20	Proverbe	31
-21	Eccleziastul	12
-22	Cîntarea cîntãrilor	8
+21	Eclesiastul	12
+22	Cântarea cântărilor	8
 23	Isaia	66
 24	Ieremia	52
-25	Plîngerile lui Ieremia	5
+25	Plângerile lui Ieremia	5
 26	Ezechiel	48
 27	Daniel	12
 28	Osea	14
@@ -38,7 +38,7 @@
 33	Mica	7
 34	Naum	3
 35	Habacuc	3
-36	Þefania	3
+36	Țefania	3
 37	Hagai	2
 38	Zaharia	14
 39	Maleahi	4

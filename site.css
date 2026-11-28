@@ -227,6 +227,133 @@ p { text-wrap: pretty; }
 .head h2 .muted { color: var(--ink-3); }
 .head p { margin-top: 18px; font-size: 19px; color: var(--ink-2); }
 
+/* ---- New: several screens (before the features) ----
+   Three screens, only the chosen one lit; the switch under them steps
+   1 → 2 → 3 → All by itself. Drawn in CSS: one picture for every language. */
+.newfeat-sec { padding: 150px 0 0; }
+/* The "Новинка" banners scroll sideways: swipe, the arrows or the dots. */
+/* Each banner its own height: the strip takes the current one's (site.js). */
+.nf-track { align-items: start; transition: height .45s cubic-bezier(.2, .7, .2, 1); }
+.nf-track { display: grid; grid-auto-flow: column; grid-auto-columns: 100%; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory;
+  scroll-behavior: smooth; scrollbar-width: none; padding: 2px; margin: -2px; }
+.nf-track::-webkit-scrollbar { display: none; }
+.nf-track > .card { scroll-snap-align: start; }
+.nf-track > .card:hover { transform: none; }
+/* Thin bars under the banner; the current one fills while its slide runs. */
+.nf-dots { display: flex; justify-content: center; gap: 8px; margin-top: 18px; }
+.nf-dots button { position: relative; width: 28px; height: 4px; padding: 0; border: 0; border-radius: 99px; overflow: hidden; cursor: pointer;
+  background: var(--line-2); transition: width .3s; }
+.nf-dots button.on { width: 48px; }
+.nf-dots button::after { content: ''; position: absolute; inset: 0; border-radius: inherit; background: var(--ink); transform: scaleX(0); transform-origin: left; }
+.nf-dots button.on::after { animation: nf-fill var(--nf-ms, 10s) linear forwards; }
+.nf-carousel.paused .nf-dots button.on::after { animation-play-state: paused; }
+@keyframes nf-fill { to { transform: scaleX(1); } }
+
+/* The new Bible screen, drawn: the input line, the chapter with picked
+   verses (the one on screen numbered in blue), the slides below. */
+.bible-mock { display: grid; gap: 16px; }
+.bm-input { display: flex; align-items: center; gap: 10px; height: 48px; padding: 0 16px; border-radius: 12px; background: var(--card);
+  box-shadow: 0 0 0 1.5px var(--blue), 0 10px 24px -14px rgba(47, 107, 255, .45); font-size: 16px; font-weight: 600; color: var(--ink); }
+.bm-input .ic { width: 18px; height: 18px; color: var(--ink-3); }
+.bm-input em { margin-left: auto; font-style: normal; font-size: 13px; font-weight: 700; color: var(--blue); }
+.bm-q::after { content: ''; display: inline-block; width: 2px; height: 18px; margin-left: 2px; vertical-align: -3px; background: var(--ink); animation: bm-caret 1s steps(1) infinite; }
+@keyframes bm-caret { 50% { opacity: 0; } }
+.bm-verses { display: grid; gap: 4px; padding: 10px; border-radius: 14px; background: var(--card); box-shadow: 0 0 0 1px var(--line); }
+.bm-v { position: relative; display: grid; grid-template-columns: 30px 1fr; column-gap: 8px; align-items: start; padding: 9px 10px; border-radius: 9px; }
+.bible-mock .bm-v p { margin: 0; max-width: none; font-size: 14px; line-height: 1.45; color: var(--ink); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.bm-v b { margin-top: 1px; align-self: start; justify-self: center; min-width: 26px; padding: 1px 6px; border-radius: 9px; text-align: center;
+  font-size: 12px; font-weight: 700; color: var(--ink-3); }
+.bible-mock .bm-verses, .bible-mock .bm-slides { opacity: 0; transform: translateY(10px); transition: opacity .4s, transform .4s; }
+.found .bm-verses, .found .bm-slides { opacity: 1; transform: none; }
+.bm-v, .bm-v b { transition: background-color .35s, color .35s; }
+.bm-v::before { content: ''; position: absolute; left: 0; top: 6px; bottom: 6px; width: 3px; border-radius: 2px; background: var(--blue); transform: scaleY(0); transition: transform .35s; }
+.picked .bm-v.pick { background: rgba(47, 107, 255, .09); }
+.picked .bm-v.pick::before { transform: scaleY(1); }
+.picked .bm-v.pick b { color: var(--blue); }
+.picked .bm-v.pick:nth-child(2), .picked .bm-v.pick:nth-child(2)::before, .picked .bm-v.pick:nth-child(2) b { transition-delay: .25s; }
+.picked .bm-v.pick:nth-child(3), .picked .bm-v.pick:nth-child(3)::before, .picked .bm-v.pick:nth-child(3) b { transition-delay: .5s; }
+.onscreen .bm-v.bm-on b { background: var(--blue); color: #fff; }
+.bm-input em { opacity: 0; transform: translateX(-6px); transition: opacity .3s, transform .3s; }
+.found .bm-input em { opacity: 1; transform: none; }
+.bm-slides span { opacity: 0; transform: translateY(8px); transition: opacity .35s, transform .35s; }
+.picked .bm-slides span { opacity: 1; transform: none; }
+.picked .bm-slides span:nth-child(2) { transition-delay: .15s; } .picked .bm-slides span:nth-child(3) { transition-delay: .3s; }
+.bm-slides { display: flex; gap: 10px; }
+.bm-slides span { flex: 1; min-width: 0; height: 62px; padding: 8px 10px; border-radius: 10px; font-size: 9.5px; line-height: 1.35; font-weight: 600; color: #fff;
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+  background: linear-gradient(160deg, #1c2a4a, #0f1524); box-shadow: inset 0 0 0 2px transparent; }
+.bm-slides em { display: block; font-style: normal; font-size: 10px; font-weight: 700; color: #9db8f2; }
+.onscreen .bm-slides span.on { box-shadow: inset 0 0 0 2px var(--blue); }
+.bm-slides span { transition: opacity .35s, transform .35s, box-shadow .35s; }
+
+.card.newfeat { display: grid; grid-template-columns: .8fr 1.2fr; gap: 48px; align-items: center; padding: 48px; }
+.newfeat .eyebrow { display: inline-flex; align-items: center; gap: 8px; }
+.newfeat .eyebrow .dot { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 0 4px rgba(34, 197, 94, .15); }
+.newfeat h2 { margin-top: 14px; font-size: clamp(32px, 4vw, 50px); line-height: 1.02; font-weight: 800; letter-spacing: -.045em; }
+.newfeat h2 .muted { color: var(--ink-3); }
+.newfeat p { margin-top: 16px; font-size: 18px; color: var(--ink-2); max-width: 400px; }
+
+.multi { padding: 44px 36px 34px; border-radius: 24px; background: linear-gradient(160deg, #eef2fb 0%, #f1eefa 100%); }
+:root[data-theme="dark"] .multi { background: rgba(255, 255, 255, .04); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .multi { background: rgba(255, 255, 255, .04); } }
+.multi-screens { display: grid; grid-template-columns: 1.55fr 1fr 1fr; gap: 22px; align-items: end; padding-bottom: 14px; }
+/* A screen: thin dark bezel, black glass when off, a stand under it. */
+.scr { position: relative; container-type: inline-size; aspect-ratio: 16 / 9; border-radius: 7px; background: #0b0d12;
+  box-shadow: 0 0 0 3px #1b1f28, 0 0 0 4px rgba(15, 18, 25, .18), 0 26px 34px -22px rgba(15, 18, 25, .6); }
+.scr::after { content: ''; position: absolute; inset: 0; z-index: 2; border-radius: inherit; pointer-events: none;
+  background: linear-gradient(115deg, rgba(255, 255, 255, .09) 0%, rgba(255, 255, 255, .02) 38%, rgba(255, 255, 255, 0) 39%); }
+.stand { position: absolute; left: 50%; top: 100%; width: 22%; height: 14px; transform: translateX(-50%); }
+.stand::before { content: ''; position: absolute; left: 50%; top: 3px; width: 8%; min-width: 4px; height: 9px; transform: translateX(-50%); background: #2a2f3a; }
+.stand::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; border-radius: 3px; background: #2a2f3a; }
+/* What it shows when on: the slide as Sermon draws it, a photo dimmed
+   under white words and the reference. */
+.slide { position: absolute; inset: 0; z-index: 1; border-radius: inherit; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 0 9%; text-align: center; opacity: 0; transition: opacity .35s;
+  background: linear-gradient(rgba(8, 10, 20, .42), rgba(8, 10, 20, .58)), url(assets/slide-mountains.jpg) center / cover; }
+.multi .slide p { margin: 0; max-width: none; font-size: 7.4cqw; line-height: 1.22; font-weight: 700; letter-spacing: -.01em; color: #fff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, .45); }
+.multi .slide span { margin-top: 3.6cqw; font-size: 3.9cqw; font-weight: 600; color: rgba(255, 255, 255, .78); }
+.multi-switch { display: flex; justify-content: center; gap: 4px; margin: 34px auto 0; padding: 4px; width: max-content; border-radius: 12px; background: var(--card); box-shadow: 0 0 0 1px var(--line); }
+/* "All": the three screens in small, lit (filled) while it's chosen. */
+.multi-switch b svg { display: block; fill: none; stroke: currentColor; stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round; }
+.multi-switch b svg .m { fill: currentColor; fill-opacity: 0; transition: fill-opacity .3s; }
+.is-active .multi-switch .b-all svg .m { animation: nf-ball-fill 12s infinite; }
+@keyframes nf-ball-fill { 0%, 72% { fill-opacity: 0; } 75%, 100% { fill-opacity: .35; } }
+.multi-switch b { min-width: 34px; height: 30px; padding: 0 10px; display: inline-grid; place-items: center; border-radius: 8px; font-size: 13.5px; font-weight: 700;
+  background: transparent; color: var(--ink-2); box-shadow: none; }
+
+/* 12 s: screen 1, 2, 3 alone, then all of them. */
+.scr-1 .slide { opacity: 1; }
+.multi-switch .b-1 { background: var(--blue); color: #fff; box-shadow: none; }
+.is-active .scr-1 .slide { animation: nf-s1 12s infinite; }
+.is-active .scr-2 .slide { animation: nf-s2 12s infinite; }
+.is-active .scr-3 .slide { animation: nf-s3 12s infinite; }
+.is-active .multi-switch .b-1 { animation: nf-b1 12s infinite; }
+.is-active .multi-switch .b-2 { animation: nf-b2 12s infinite; }
+.is-active .multi-switch .b-3 { animation: nf-b3 12s infinite; }
+.is-active .multi-switch .b-all { animation: nf-ball 12s infinite; }
+@keyframes nf-s1 { 0%, 22% { opacity: 1; } 25%, 72% { opacity: 0; } 75%, 100% { opacity: 1; } }
+@keyframes nf-s2 { 0%, 22% { opacity: 0; } 25%, 47% { opacity: 1; } 50%, 72% { opacity: 0; } 75%, 100% { opacity: 1; } }
+@keyframes nf-s3 { 0%, 47% { opacity: 0; } 50%, 72% { opacity: 1; } 75%, 100% { opacity: 1; } }
+@keyframes nf-b1 { 0%, 22% { background: var(--blue); color: #fff; box-shadow: none; } 25%, 100% { background: transparent; color: var(--ink-2); } }
+@keyframes nf-b2 { 0%, 22% { background: transparent; color: var(--ink-2); } 25%, 47% { background: var(--blue); color: #fff; box-shadow: none; } 50%, 100% { background: transparent; color: var(--ink-2); } }
+@keyframes nf-b3 { 0%, 47% { background: transparent; color: var(--ink-2); } 50%, 72% { background: var(--blue); color: #fff; box-shadow: none; } 75%, 100% { background: transparent; color: var(--ink-2); } }
+@keyframes nf-ball { 0%, 72% { background: transparent; color: var(--ink-2); } 75%, 100% { background: var(--blue); color: #fff; box-shadow: none; } }
+/* Without motion: screen 2 alone, its button chosen. */
+@media (prefers-reduced-motion: reduce) {
+  .slide, .multi-switch b { animation: none !important; }
+  .scr-2 .slide { opacity: 1; }
+  .multi-switch .b-2 { background: var(--blue); color: #fff; box-shadow: none; }
+  .bible-mock .bm-input em, .bible-mock .bm-slides span { opacity: 1; transform: none; }
+}
+@media (max-width: 900px) {
+  /* One column: the picture right under the words (the slides share one
+     height, so the shorter one keeps its spare room at the bottom). */
+  .card.newfeat { grid-template-columns: 1fr; align-content: start; gap: 26px; padding: 28px 22px; }
+  .newfeat-sec { padding-top: 110px; }
+  .multi { padding: 30px 20px 24px; }
+}
+
 /* ---- Bento ---- */
 .bento-sec { padding: 170px 0 0; }
 .bento { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; margin-top: 56px; }
@@ -286,7 +413,7 @@ p { text-wrap: pretty; }
 .stream { position: relative; margin: 0; border-radius: 16px; overflow: hidden; box-shadow: 0 0 0 1px rgba(255, 255, 255, .1), 0 40px 80px -20px rgba(0, 0, 0, .8); }
 .stream img { width: 100%; height: auto; }
 .stream figcaption { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 14px; background: #10131b; font-size: 13px; font-weight: 600; }
-.on-air { display: inline-flex; align-items: center; gap: 8px; height: 30px; padding: 0 12px; border-radius: 8px; background: #e5484d; color: #fff; letter-spacing: .02em; }
+.on-air { display: inline-flex; align-items: center; gap: 8px; height: 30px; padding: 0 12px; border-radius: 8px; background: #e5484d; color: #fff; letter-spacing: .02em; white-space: nowrap; flex: none; }
 .on-air i { width: 7px; height: 7px; border-radius: 50%; background: #fff; animation: pulse 1.6s ease-in-out infinite; }
 .src { display: inline-flex; align-items: center; min-height: 30px; color: #aab3c5; text-align: right; }
 
@@ -402,6 +529,38 @@ p { text-wrap: pretty; }
   .nav-dl { display: none; }
   .hero-actions .btn { width: 100%; }
   .stage { margin-top: 52px; }
+}
+/* Phones: no floating cards over the app's picture (they hid it), less
+   empty room between the sections, the "Новинка" banner tighter. */
+@media (max-width: 520px) {
+  .chip { display: none !important; }
+  .stage { margin-top: 40px; }
+  .newfeat-sec { padding-top: 64px; }
+  .bento-sec, .langs, .download, .reach { padding-top: 80px; }
+  .bento { margin-top: 36px; }
+  .live { margin-top: 80px; padding: 56px 0; }
+  .card.newfeat { gap: 22px; padding: 24px 18px 26px; }
+  .newfeat h2 { font-size: 30px; }
+  .newfeat p { font-size: 16.5px; }
+  .multi { padding: 22px 14px 18px; border-radius: 18px; }
+  /* The big screen across the top, the two others under it: the slide
+     big enough to read. */
+  .multi-screens { grid-template-columns: 1fr 1fr; gap: 26px 14px; }
+  .multi-screens .scr.big { grid-column: 1 / -1; width: 86%; justify-self: center; }
+  .multi-switch { margin-top: 24px; }
+  .bm-input { height: 44px; font-size: 15px; gap: 8px; padding: 0 12px; }
+  .bm-q { flex: none; white-space: nowrap; }
+  .bm-input em { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 12px; }
+  .bm-slides span { -webkit-line-clamp: 2; height: 46px; }
+  .bible-mock .bm-v p { font-size: 13px; }
+  .bm-slides span { height: 56px; }
+  .card { padding: 22px 18px 0; min-height: 0; }
+  .card-visual { padding: 18px; margin-top: 20px; border-radius: 16px; }
+  .card.dark .card-visual { padding: 18px; }
+  .dl-card { padding: 24px; }
+  .dl-card h3 { font-size: 24px; margin-top: 12px; }
+  .dl-card p { margin-bottom: 18px; }
+  .dl-card .btn { align-self: stretch; justify-content: center; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }

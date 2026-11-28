@@ -25,7 +25,7 @@
 <script>try{var t=localStorage.getItem('sermon-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 <link rel="icon" type="image/png" href="../assets/favicon.png">
 <link rel="preload" href="../assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../site.css?v=68d168448d">
+<link rel="stylesheet" href="../site.css?v=cff6c19fe6">
 <link rel="alternate" hreflang="en" href="https://andreyyushchenko.github.io/Sermon-Releases/">
 <link rel="alternate" hreflang="uk" href="https://andreyyushchenko.github.io/Sermon-Releases/uk/">
 <link rel="alternate" hreflang="ru" href="https://andreyyushchenko.github.io/Sermon-Releases/ru/">
@@ -119,9 +119,50 @@
         <div class="chip chip-timer" aria-hidden="true"><div class="sq"><svg class="ic" style="width:18px;height:18px"><use href="#i-timer"/></svg></div><div><small>타이머 · 시작까지</small><strong class="count">04:58</strong></div></div>
         <div class="chip chip-video" aria-hidden="true"><div class="sq"><svg class="ic" style="width:18px;height:18px"><use href="#i-play2"/></svg></div><div><small>동영상</small><strong>반복 배경</strong></div></div>
         <div class="chip chip-photo" aria-hidden="true"><div class="sq"><svg class="ic" style="width:18px;height:18px"><use href="#i-image"/></svg></div><div><small>사진</small><strong>슬라이드쇼</strong></div></div>
-        <div class="chip chip-bible" aria-hidden="true"><div class="sq"><svg class="ic" style="width:18px;height:18px"><use href="#i-book-open"/></svg></div><div><small>성경</small><strong>요 3:16</strong></div></div>
+        <div class="chip chip-bible" aria-hidden="true"><div class="sq"><svg class="ic" style="width:18px;height:18px"><use href="#i-book-open"/></svg></div><div><small>성경</small><strong>사 40:31</strong></div></div>
         <div class="chip chip-list" aria-hidden="true"><div class="sq"><svg class="ic" style="width:18px;height:18px"><use href="#i-list"/></svg></div><div><small>플레이리스트</small><strong>주일 예배</strong></div></div>
         <div class="chip chip-pres" aria-hidden="true"><div class="sq"><svg class="ic" style="width:18px;height:18px"><use href="#i-slides"/></svg></div><div><small>프레젠테이션</small><strong>슬라이드 3 / 12</strong></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="newfeat-sec" id="new">
+    <div class="wrap">
+      <div class="nf-carousel rise" aria-roledescription="carousel">
+        <div class="nf-track">
+          <article class="card newfeat is-active" aria-roledescription="slide" data-ms="12000">
+            <div class="newfeat-text">
+              <span class="eyebrow"><span class="dot"></span>새 기능</span>
+              <h2>여러 화면. <span class="muted">원하는 곳에 출력.</span></h2>
+              <p>프로젝터든 무대 TV든, 클릭 한 번으로 예배 화면을 띄울 곳을 고릅니다.</p>
+            </div>
+            <div class="multi" role="img" aria-label="화면 줄이 있는 출력 패널: 모두, 2, 3, 4">
+              <div class="multi-screens">
+                <div class="scr scr-1 big"><div class="slide"><p>내게 능력 주시는 자 안에서 내가 모든 것을 할 수 있느니라</p><span>빌립보서 4:13</span></div><span class="stand"></span></div>
+                <div class="scr scr-2"><div class="slide"><p>내게 능력 주시는 자 안에서 내가 모든 것을 할 수 있느니라</p><span>빌립보서 4:13</span></div><span class="stand"></span></div>
+                <div class="scr scr-3"><div class="slide"><p>내게 능력 주시는 자 안에서 내가 모든 것을 할 수 있느니라</p><span>빌립보서 4:13</span></div><span class="stand"></span></div>
+              </div>
+              <div class="multi-switch" aria-hidden="true"><b class="b-all" title="모두"><svg viewBox="0 0 24 18" width="24" height="18" aria-hidden="true"><defs><mask id="nf-all-cut"><rect width="24" height="18" fill="#fff"/><rect x="-1" y="3.4" width="16.6" height="15" rx="3" fill="#000"/></mask></defs><g mask="url(#nf-all-cut)"><rect class="m" x="8.5" y="1" width="14.5" height="9.5" rx="2"/><path d="M15.75 10.5v2.3M13.4 13.2h4.7"/></g><rect class="m" x="1" y="5" width="13" height="8.6" rx="2"/><path d="M7.5 13.6v2M5.2 16.6h4.6"/></svg></b><b class="b-1">1</b><b class="b-2">2</b><b class="b-3">3</b></div>
+            </div>
+          </article>
+          <article class="card newfeat" aria-roledescription="slide" data-ms="9000">
+            <div class="newfeat-text">
+              <span class="eyebrow"><span class="dot"></span>새 기능</span>
+              <h2>성경. <span class="muted">몇 초 만에 찾아서 띄우기.</span></h2>
+              <p>“고전 13 4”를 입력하고 구절을 고르세요. 한 슬라이드에 여러 구절, 화살표로 계속 읽기.</p>
+            </div>
+            <div class="multi bible-mock" role="img" aria-label="새 성경 화면: 입력 줄, 선택한 구절이 있는 장, 슬라이드">
+              <div class="bm-input"><svg class="ic"><use href="#i-book-open"/></svg><span class="bm-q" data-text="고전 13 4">고전 13 4</span><em>고린도전서 13:4 ↵</em></div>
+              <div class="bm-verses">
+                <div class="bm-v pick bm-on"><b>4</b><p>사랑은 오래 참고 사랑은 온유하며 투기하는 자가 되지 아니하며…</p></div>
+                <div class="bm-v pick"><b>5</b><p>무례히 행치 아니하며 자기의 유익을 구치 아니하며…</p></div>
+                <div class="bm-v pick"><b>6</b><p>불의를 기뻐하지 아니하며 진리와 함께 기뻐하고</p></div>
+              </div>
+              <div class="bm-slides"><span class="on"><em>13:4</em>사랑은 오래 참고 사랑은 온유하며 투기하는 자가 되지 아니하며…</span><span><em>13:5</em>무례히 행치 아니하며 자기의 유익을 구치 아니하며…</span><span><em>13:6</em>불의를 기뻐하지 아니하며 진리와 함께 기뻐하고</span></div>
+            </div>
+          </article>
+        </div>
+        <div class="nf-dots"><button type="button" class="on" aria-label="1"></button><button type="button" aria-label="2"></button></div>
       </div>
     </div>
   </section>
@@ -149,9 +190,9 @@
           <div class="card-visual"><div class="device"><picture><source type="image/webp" srcset="../assets/en/phone-live-600.webp?v=348ae769b7 600w, ../assets/en/phone-live.webp?v=4bee5877fd 900w" sizes="300px"><img src="../assets/en/phone-live.png?v=1.0" width="1206" height="2622" loading="lazy" decoding="async" alt="iPhone의 Sermon Remote: 송출 중인 찬양, 파트와 슬라이드"></picture></div></div>
         </article>
         <article class="card span-7 rise" style="--d:.08s">
-          <h3>‘요 3:16’을 입력하면 바로 화면에.</h3>
+          <h3>‘시 23’을 입력하면 바로 화면에.</h3>
           <p>불러온 어떤 번역본이든, 원하면 구절 아래에 다른 번역본도 함께.</p>
-          <div class="card-visual tint-green"><div class="shot"><picture><source type="image/webp" srcset="../assets/en/card-bible-800.webp?v=f3c15a290c 800w, ../assets/en/card-bible.webp?v=07e389eb4c 1400w" sizes="(max-width: 1080px) 94vw, 700px"><img src="../assets/en/card-bible.webp?v=07e389eb4c" width="1620" height="906" loading="lazy" decoding="async" alt="Sermon의 성경: 시편 23편과 슬라이드"></picture></div></div>
+          <div class="card-visual tint-green"><div class="shot"><picture><source type="image/webp" media="(max-width: 520px)" srcset="../assets/en/card-bible-m.webp?v=c596d4a31b"><source type="image/webp" srcset="../assets/en/card-bible-800.webp?v=d9f9e0e0c3 800w, ../assets/en/card-bible.webp?v=b4d0e8b175 1400w" sizes="(max-width: 1080px) 94vw, 700px"><img src="../assets/en/card-bible.webp?v=b4d0e8b175" width="1547" height="1209" loading="lazy" decoding="async" alt="Sermon의 성경: 시편 23편과 슬라이드"></picture></div></div>
         </article>
         <article class="card span-12 timers-card rise">
           <h3>카운트다운, 시계, 메시지.</h3>
@@ -254,15 +295,16 @@
 </main>
 <dialog class="modal news" id="news-dialog" aria-labelledby="news-title">
   <button class="modal-close" data-close aria-label="닫기"><svg class="ic"><use href="#i-x"/></svg></button>
-  <p class="news-ver">Sermon 0.6.0 beta · 2026. 11. 25.</p>
+  <p class="news-ver">Sermon 0.7.0 beta · 2026. 11. 28.</p>
   <h2 id="news-title">Sermon의 새로운 점</h2>
   <ul class="news-list">
-    <li><b>찬양집</b>모든 찬양집이 모든 곡과 함께 빠짐없이 들어옵니다</li>
-    <li><b>찬양 가져오기</b>OpenLyrics, OpenSong, ProPresenter, SongSelect, SongBeamer도 됩니다</li>
-    <li><b>새 디자인</b>밝은 디자인, 작은 화면에서는 사이드바가 아이콘으로 접힙니다</li>
-    <li><b>슬라이드 표시</b>파랑: 화면에 나온 것, 주황: 그 전에 나온 것, 초록: 찬양을 멈춘 곳</li>
-    <li><b>프랑스어</b>Sermon, 웹사이트, 봇이 이제 프랑스어도 지원합니다</li>
-    <li><b>지원</b>도움말에 텔레그램 버튼이 있고, 사이드바에서 프로젝트를 후원할 수 있습니다</li>
+    <li><b>성경</b>“요 3 16”을 입력하면 장이 열리고, 화살표로 계속 읽습니다</li>
+    <li><b>슬라이드당 구절</b>한 슬라이드에 몇 구절을 둘지 직접 고르고, 글자는 자동으로 맞춰집니다</li>
+    <li><b>여러 화면</b>한 모니터 또는 모든 모니터에, 클릭 한 번으로 전환</li>
+    <li><b>성경 번역본</b>OSIS, USFX, USFM, MyBible, e-Sword, theWord도 가능</li>
+    <li><b>곡 파트 이름</b>왼쪽, 가운데, 오른쪽에 원하는 크기로; 가사가 튀지 않습니다</li>
+    <li><b>메뉴와 목록</b>어디서나 같은 깔끔한 메뉴</li>
+    <li><b>곡 검색</b>또렷한 진한 글자</li>
   </ul>
   <div class="news-actions">
     <a class="btn btn-dark btn-md" href="#download" data-close>다운로드</a>
@@ -276,11 +318,11 @@
     <span class="copy">© 2026 Sermon</span>
   </div>
 </footer>
-<aside class="nw" data-ver="0.6.0 beta" aria-label="새 버전" hidden>
+<aside class="nw" data-ver="0.7.0 beta" aria-label="새 버전" hidden>
   <button class="nw-x" type="button" aria-label="닫기"><svg class="ic" style="width:16px;height:16px"><use href="#i-x"/></svg></button>
-  <p class="nw-top"><span class="nw-dot"></span>새 버전 · 2026. 11. 25.</p>
-  <p class="nw-ver">Sermon 0.6.0 beta</p>
-  <ul class="nw-list"><li>찬양집</li><li>찬양 가져오기</li><li>새 디자인</li><li>슬라이드 표시</li><li>프랑스어</li><li>지원</li></ul>
+  <p class="nw-top"><span class="nw-dot"></span>새 버전 · 2026. 11. 28.</p>
+  <p class="nw-ver">Sermon 0.7.0 beta</p>
+  <ul class="nw-list"><li>성경</li><li>슬라이드당 구절</li><li>여러 화면</li><li>성경 번역본</li><li>곡 파트 이름</li><li>메뉴와 목록</li><li>곡 검색</li></ul>
   <a class="nw-go" href="../ko/changes/">전체 변경 사항<svg class="ic" style="width:15px;height:15px"><use href="#i-arrow"/></svg></a>
 </aside>
 <dialog class="modal" tabindex="-1" id="support-dialog" aria-labelledby="support-title">
@@ -317,6 +359,6 @@
   <p>Sermon은 Windows와 macOS에서 실행됩니다. 컴퓨터에서 이 페이지를 열어 다운로드하세요. iOS 앱은 곧 출시됩니다.</p>
   <div class="modal-actions"><button class="btn btn-blue" data-close>닫기</button></div>
 </dialog>
-<script src="../site.js?v=3d0a59d316"></script>
+<script src="../site.js?v=4e452b942f"></script>
 </body>
 </html>
